@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Financial econometrics case study on MYR/USD exchange-rate volatility and Malaysia's export growth." />
+  <title>Exchange Rate Volatility & Export Growth | Wa Yee Siong</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">← PORTFOLIO</a>
+      <nav class="navlinks" aria-label="Project navigation">
+        <a href="#method">Method</a>
+        <a href="#findings">Findings</a>
+        <a href="assets/exchange-rate-volatility-export-growth-malaysia.pdf" target="_blank" rel="noopener">Full report</a>
+        <a href="https://github.com/wayeesiong/exchange-rate-volatility-malaysia" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> Financial Econometrics · Malaysia</div>
+        <h1>The Impact of Exchange Rate Volatility on Export Growth</h1>
+        <p class="lead">A quantitative time-series study examining how MYR/USD volatility relates to Malaysia's export growth in the short and long run, using a two-stage volatility and dynamic-regression framework.</p>
+        <div class="meta-row">
+          <span class="meta-pill">Academic Group Project</span>
+          <span class="meta-pill">FIN308 Financial Econometrics</span>
+          <span class="meta-pill">Python · Spyder</span>
+          <span class="meta-pill">Jan 2006 – Sep 2025</span>
+        </div>
+        <div class="metric-grid" aria-label="Project highlights">
+          <div class="metric"><strong>237</strong><span>monthly observations in the macro dataset</span></div>
+          <div class="metric"><strong>EGARCH(1,1)</strong><span>best-fitting conditional volatility specification</span></div>
+          <div class="metric"><strong>6.9242</strong><span>ARDL bounds-test F-statistic</span></div>
+          <div class="metric"><strong>29.2%</strong><span>monthly correction toward long-run equilibrium</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <aside>
+          <div class="sidebar-card">
+            <h3>Skills demonstrated</h3>
+            <p>End-to-end financial econometrics: data preparation, volatility modelling, dynamic regression, diagnostics, robustness testing and interpretation.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Time Series</span>
+              <span class="tag">ARIMA</span>
+              <span class="tag">GARCH / EGARCH</span>
+              <span class="tag">ARDL</span>
+              <span class="tag">ECM</span>
+              <span class="tag">Granger Causality</span>
+              <span class="tag">Macroeconomic Analysis</span>
+            </div>
+            <a class="button" href="assets/exchange-rate-volatility-export-growth-malaysia.pdf" target="_blank" rel="noopener">View full report ↗</a>
+            <a class="button" href="https://github.com/wayeesiong/exchange-rate-volatility-malaysia" target="_blank" rel="noopener">View code &amp; data on GitHub ↗</a>
+          </div>
+        </aside>
+
+        <article>
+          <section class="article-section">
+            <div class="eyebrow">01 · Research question</div>
+            <h2>Does currency volatility materially affect export growth?</h2>
+            <p>Malaysia is a highly trade-oriented economy operating under a floating exchange-rate regime. The project investigates whether volatility in MYR/USD affects export performance, whether the effect differs between the short and long run, and whether volatility contains predictive information for exports.</p>
+            <div class="callout"><strong>Core objective:</strong> distinguish temporary currency noise from persistent exchange-rate risk that may influence exporters' pricing, hedging and long-term decisions.</div>
+          </section>
+
+          <section id="method" class="article-section">
+            <div class="eyebrow">02 · Methodology</div>
+            <h2>A two-stage modelling framework</h2>
+            <p class="subtle">The study combines high-frequency FX information with monthly macroeconomic data, then tests both volatility dynamics and export-growth relationships.</p>
+            <div class="workflow">
+              <div class="step"><div class="step-num">STEP 01</div><h3>Prepare data</h3><p>MYR/USD exchange rates plus export growth, REER, industrial production, CPI and world industrial production.</p></div>
+              <div class="step"><div class="step-num">STEP 02</div><h3>Estimate volatility</h3><p>Model daily MYR/USD log returns using ARIMA and GARCH-family specifications; aggregate conditional volatility to monthly frequency.</p></div>
+              <div class="step"><div class="step-num">STEP 03</div><h3>Estimate dynamics</h3><p>Apply ARDL bounds testing and an Error Correction Model to separate long-run cointegration from short-run adjustment.</p></div>
+              <div class="step"><div class="step-num">STEP 04</div><h3>Stress-test results</h3><p>Use stationarity, residual diagnostics, subsample stability, CUSUM/CUSUMSQ and Granger-causality testing.</p></div>
+            </div>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">03 · Data</div>
+            <h2>Macroeconomic controls around the FX signal</h2>
+            <ul>
+              <li><strong>Exchange rate:</strong> daily MYR/USD observations used to estimate conditional volatility.</li>
+              <li><strong>Export growth:</strong> Malaysia's year-on-year export growth.</li>
+              <li><strong>Controls:</strong> Real Effective Exchange Rate, Industrial Production Index, Consumer Price Index and World Industrial Production Index.</li>
+              <li><strong>Study horizon:</strong> January 2006 to September 2025, covering major global shocks and changing monetary conditions.</li>
+            </ul>
+          </section>
+
+          <section id="findings" class="article-section">
+            <div class="eyebrow">04 · Key findings</div>
+            <h2>Persistent volatility matters more than short-term noise.</h2>
+            <div class="finding-grid">
+              <div class="finding"><strong>Negative long-run relationship</strong><p>Exchange-rate volatility carried a negative long-run coefficient and was statistically significant at the 10% level.</p></div>
+              <div class="finding"><strong>No significant short-run effect</strong><p>The short-run volatility coefficient was negative but statistically insignificant, suggesting immediate export movements were driven more by other demand- and supply-side factors.</p></div>
+              <div class="finding"><strong>Adjustment back to equilibrium</strong><p>The error-correction coefficient implied that about 29.2% of a short-run deviation from long-run equilibrium was corrected within one month.</p></div>
+              <div class="finding"><strong>Regime dependence</strong><p>Subsample analysis showed the volatility-export relationship shifting from positive in 2006–2015 to negative in 2016–2025.</p></div>
+            </div>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">05 · Interpretation</div>
+            <h2>What the results suggest</h2>
+            <p>The evidence supports a distinction between transitory FX movements and persistent currency uncertainty. In the short run, exporters may partly absorb or hedge exchange-rate shocks, while domestic production conditions and global demand have greater influence on month-to-month export performance. Over longer horizons, persistent volatility may increase uncertainty and reinforce risk-averse behaviour.</p>
+            <p>Granger-causality results also suggest that exchange-rate volatility is a secondary predictor of export growth, while world industrial production and CPI carry stronger predictive signals in the model.</p>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">06 · Robustness & limitations</div>
+            <h2>Testing the stability of the conclusion</h2>
+            <ul>
+              <li>CUSUM results supported broad coefficient stability, while CUSUMSQ highlighted variance instability around periods of major economic stress.</li>
+              <li>The study identifies multicollinearity among macroeconomic controls as a limitation affecting individual coefficient precision.</li>
+              <li>Aggregate export data may mask sector-level differences.</li>
+              <li>A linear ARDL framework may not capture all asymmetric or nonlinear effects, motivating potential NARDL or sectoral extensions.</li>
+            </ul>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">07 · Recruiter takeaway</div>
+            <h2>What this project demonstrates</h2>
+            <p>This project demonstrates the ability to translate an open-ended macro-financial question into a testable modelling pipeline, implement time-series techniques in Python, evaluate model assumptions, interpret statistical evidence cautiously and communicate findings in a decision-oriented format.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="assets/exchange-rate-volatility-export-growth-malaysia.pdf" target="_blank" rel="noopener">Open full academic report</a>
+              <a class="button secondary" href="index.html">← Back to portfolio</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>Wa Yee Siong · Finance & Quantitative Portfolio</span>
+      <span>Academic group project · FIN308 Financial Econometrics</span>
+    </div>
+  </footer>
+</body>
+</html>
