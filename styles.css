@@ -671,7 +671,7 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 
 /* Consistent spacing between cards in each project category */
 .project-group .project-card + .project-card {
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
 }
 
 
