@@ -540,3 +540,105 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
     grid-template-columns: 44px 1fr;
   }
 }
+/* =========================================================
+   PORTFOLIO OPTIMIZATION PROJECT — LAYOUT FIXES
+   ========================================================= */
+
+
+/* ---------- METHODOLOGY ---------- */
+
+.portfolio-project .workflow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-project .workflow-step {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #dce4eb;
+}
+
+.portfolio-project .workflow-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-project .workflow-step p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+
+/* ---------- TABLES ---------- */
+
+.portfolio-project .data-table {
+  width: 100%;
+  table-layout: auto;
+}
+
+.portfolio-project .data-table th,
+.portfolio-project .data-table td {
+  vertical-align: middle;
+}
+
+
+/* Wider first column so labels don't break every 1–2 words */
+
+.portfolio-project .data-table th:first-child,
+.portfolio-project .data-table td:first-child {
+  width: 180px;
+  min-width: 180px;
+}
+
+
+/* Better spacing */
+
+.portfolio-project .data-table th {
+  padding: 1rem 1.1rem;
+}
+
+.portfolio-project .data-table td {
+  padding: 1rem 1.1rem;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+.portfolio-project .case-section h2 {
+  max-width: 900px;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+}
+
+
+/* ---------- CONTENT WIDTH ---------- */
+
+.portfolio-project .case-study {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .portfolio-project .workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-project .data-table th:first-child,
+  .portfolio-project .data-table td:first-child {
+    width: auto;
+    min-width: 140px;
+  }
+
+}
