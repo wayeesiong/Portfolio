@@ -1,1 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case study on the macroeconomic determinants of U.S. gold futures prices." />
+  <meta name="theme-color" content="#0a2745" />
+  <title>Gold Futures Macroeconomic Analysis | Wa Yee Siong</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">WA YEE SIONG</a>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#capabilities">Capabilities</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- PROJECT HERO -->
+    <section class="project-hero">
+      <div class="container">
+
+        <a class="back-link" href="index.html#projects">
+          ← Back to projects
+        </a>
+
+        <div class="project-kicker">
+          Financial Econometrics · Academic Group Project
+        </div>
+
+        <h1>Macroeconomic Determinants of U.S. Gold Futures Prices</h1>
+
+        <p class="project-lead">
+          An econometric investigation into how key U.S. macroeconomic variables
+          influence gold futures prices, with model diagnostics and robust
+          estimation used to refine the initial regression specification.
+        </p>
+
+        <div class="project-meta">
+          <span>U.S. Gold Futures</span>
+          <span>2014–2024</span>
+          <span>EViews</span>
+          <span>Financial Econometrics</span>
+        </div>
+
+
+        <!-- HERO METRICS -->
+        <div class="project-metrics">
+
+          <div class="metric">
+            <div class="metric-value">121</div>
+            <div class="metric-label">Monthly observations</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Macroeconomic predictors</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-value">0.967</div>
+            <div class="metric-label">Final model R²</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-value">2.019</div>
+            <div class="metric-label">Durbin-Watson statistic</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECT CONTENT -->
+    <section class="section">
+      <div class="container content-grid">
+
+
+        <!-- SIDEBAR -->
+        <aside class="project-sidebar">
+
+          <div class="sidebar-block">
+            <div class="sidebar-label">Techniques</div>
+
+            <div class="sidebar-tags">
+              <span class="tag">OLS</span>
+              <span class="tag">VIF</span>
+              <span class="tag">HAC / Newey-West</span>
+              <span class="tag">AR(1)</span>
+              <span class="tag">AIC / HQC</span>
+            </div>
+          </div>
+
+
+          <div class="sidebar-block">
+            <div class="sidebar-label">Tools</div>
+
+            <div class="sidebar-list">
+              <span>EViews</span>
+              <span>Microsoft Excel</span>
+            </div>
+          </div>
+
+
+          <div class="sidebar-block">
+            <div class="sidebar-label">Project files</div>
+
+            <div class="sidebar-links">
+
+              <a
+                href="assets/gold-futures-macroeconomic-analysis.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Full academic report ↗
+              </a>
+
+              <a
+                href="https://github.com/wayeesiong/gold-futures-macroeconomic-analysis"
+                target="_blank"
+                rel="noopener"
+              >
+                Technical repository ↗
+              </a>
+
+            </div>
+          </div>
+
+        </aside>
+
+
+        <!-- MAIN ARTICLE -->
+        <article class="case-study">
+
+
+          <!-- 01 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              01 · Research question
+            </div>
+
+            <h2>What drives U.S. gold futures prices?</h2>
+
+            <p>
+              Gold is widely used as a store of value, portfolio diversifier
+              and safe-haven asset during periods of economic uncertainty.
+              This project examines whether major U.S. macroeconomic variables
+              help explain movements in gold futures prices.
+            </p>
+
+            <p>
+              The analysis focuses on five potential determinants:
+              the U.S. Dollar Index, Consumer Price Index, M2 money supply,
+              Federal Funds Effective Rate and Industrial Production Index.
+            </p>
+
+            <div class="question-box">
+              <strong>Core question:</strong>
+              How do major U.S. macroeconomic variables influence
+              U.S. gold futures prices?
+            </div>
+
+          </section>
+
+
+          <!-- 02 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              02 · Methodology
+            </div>
+
+            <h2>From initial regression to a more robust specification.</h2>
+
+            <p>
+              Rather than relying solely on the initial OLS regression,
+              the analysis progressively tested the statistical properties
+              of the model and adjusted the specification where necessary.
+            </p>
+
+
+            <div class="workflow">
+
+              <div class="workflow-step">
+                <span class="workflow-num">01</span>
+
+                <div>
+                  <h3>Estimate initial OLS model</h3>
+
+                  <p>
+                    Model gold futures prices as a function of the five
+                    selected macroeconomic variables.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="workflow-step">
+                <span class="workflow-num">02</span>
+
+                <div>
+                  <h3>Diagnose model assumptions</h3>
+
+                  <p>
+                    Test for multicollinearity, heteroscedasticity and
+                    autocorrelation using VIF, Breusch-Pagan-Godfrey,
+                    White, Durbin-Watson and Breusch-Godfrey tests.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="workflow-step">
+                <span class="workflow-num">03</span>
+
+                <div>
+                  <h3>Apply robust inference</h3>
+
+                  <p>
+                    Use HAC / Newey-West standard errors after identifying
+                    heteroscedasticity and serial correlation in the
+                    initial specification.
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="workflow-step">
+                <span class="workflow-num">04</span>
+
+                <div>
+                  <h3>Refine the dynamic specification</h3>
+
+                  <p>
+                    Add the first lag of gold futures prices and compare
+                    alternative lag orders using AIC and HQC to identify
+                    the preferred final model.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- 03 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              03 · Data
+            </div>
+
+            <h2>Ten years of monthly market and macroeconomic data.</h2>
+
+            <p>
+              The dataset covers monthly observations from March 2014
+              to March 2024, providing 121 observations before accounting
+              for lagged terms.
+            </p>
+
+            <div class="data-table-wrapper">
+
+              <table class="data-table">
+
+                <thead>
+                  <tr>
+                    <th>Variable</th>
+                    <th>Measure</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>GF</td>
+                    <td>U.S. Gold Futures Price</td>
+                  </tr>
+
+                  <tr>
+                    <td>USD</td>
+                    <td>U.S. Dollar Index</td>
+                  </tr>
+
+                  <tr>
+                    <td>CPI</td>
+                    <td>Consumer Price Index growth</td>
+                  </tr>
+
+                  <tr>
+                    <td>MS</td>
+                    <td>M2 Money Supply</td>
+                  </tr>
+
+                  <tr>
+                    <td>IR</td>
+                    <td>Federal Funds Effective Rate</td>
+                  </tr>
+
+                  <tr>
+                    <td>IPI</td>
+                    <td>Industrial Production Index</td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </section>
+
+
+          <!-- 04 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              04 · Key findings
+            </div>
+
+            <h2>The final model highlights both macroeconomic and price-persistence effects.</h2>
+
+
+            <div class="finding-grid">
+
+              <div class="finding-card">
+                <div class="finding-stat">+0.0186</div>
+
+                <h3>Money Supply</h3>
+
+                <p>
+                  M2 money supply is positively associated with gold futures
+                  prices and remains statistically significant at the 1% level.
+                </p>
+              </div>
+
+
+              <div class="finding-card">
+                <div class="finding-stat">+19.29</div>
+
+                <h3>Interest Rate</h3>
+
+                <p>
+                  A one-percentage-point increase in the federal funds rate
+                  is associated with an approximately USD 19.29 increase
+                  in gold futures prices, holding other variables constant.
+                </p>
+              </div>
+
+
+              <div class="finding-card">
+                <div class="finding-stat">−9.15</div>
+
+                <h3>Industrial Production</h3>
+
+                <p>
+                  Higher industrial production is associated with lower
+                  gold futures prices in the preferred model.
+                </p>
+              </div>
+
+
+              <div class="finding-card">
+                <div class="finding-stat">+0.773</div>
+
+                <h3>Previous-Month Price</h3>
+
+                <p>
+                  The previous month's gold futures price is strongly
+                  significant, indicating substantial persistence in
+                  gold futures price movements.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- 05 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              05 · Interpretation
+            </div>
+
+            <h2>Gold prices reflect both macroeconomic conditions and market persistence.</h2>
+
+            <p>
+              The final specification suggests that changes in liquidity,
+              monetary conditions and real economic activity are associated
+              with gold futures prices.
+            </p>
+
+            <p>
+              Money supply displays a positive relationship with gold futures
+              prices, while industrial production is negatively associated
+              with gold. This is consistent with the idea that stronger
+              productive-sector conditions can reduce the relative appeal
+              of safe-haven assets.
+            </p>
+
+            <p>
+              The significant lagged gold futures term also indicates that
+              recent price information contains substantial explanatory
+              power for current prices.
+            </p>
+
+          </section>
+
+
+          <!-- 06 -->
+          <section class="case-section">
+
+            <div class="section-number">
+              06 · Robustness & limitations
+            </div>
+
+            <h2>Diagnostics materially changed the interpretation of the model.</h2>
+
+            <p>
+              The initial OLS specification produced a high R² of approximately
+              0.925, but diagnostic tests identified both heteroscedasticity
+              and positive autocorrelation.
+            </p>
+
+            <p>
+              HAC / Newey-West standard errors were therefore applied to
+              obtain more reliable inference. A lagged dependent variable
+              was subsequently introduced to address the model's dynamic
+              structure.
+            </p>
+
+            <p>
+              The preferred GF(-1) specification improved the model R² to
+              approximately 0.967 and produced a Durbin-Watson statistic
+              of approximately 2.019. The Breusch-Godfrey test no longer
+              indicated statistically significant serial correlation.
+            </p>
+
+            <p>
+              The analysis remains observational and should therefore be
+              interpreted as evidence of statistical relationships rather
+              than definitive causal effects.
+            </p>
+
+          </section>
+
+
+          <!-- 07 -->
+          <section class="case-section recruiter-section">
+
+            <div class="section-number">
+              07 · Recruiter takeaway
+            </div>
+
+            <h2>What this project demonstrates.</h2>
+
+            <div class="takeaway-list">
+
+              <div class="takeaway-item">
+                <strong>Econometric judgement</strong>
+
+                <span>
+                  Moving beyond headline regression results by testing
+                  assumptions and refining the model when diagnostics
+                  indicated statistical problems.
+                </span>
+              </div>
+
+
+              <div class="takeaway-item">
+                <strong>Financial-market interpretation</strong>
+
+                <span>
+                  Translating macroeconomic indicators into economically
+                  meaningful implications for gold futures markets.
+                </span>
+              </div>
+
+
+              <div class="takeaway-item">
+                <strong>Model validation</strong>
+
+                <span>
+                  Applying heteroscedasticity, autocorrelation and
+                  multicollinearity diagnostics before selecting the
+                  final specification.
+                </span>
+              </div>
+
+
+              <div class="takeaway-item">
+                <strong>Analytical communication</strong>
+
+                <span>
+                  Converting detailed econometric output into concise,
+                  decision-relevant findings.
+                </span>
+              </div>
+
+            </div>
+
+          </section>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container footer-row">
+
+      <span>
+        Wa Yee Siong · Finance & Quantitative Portfolio
+      </span>
+
+      <span>
+        Academic Group Project · Financial Econometrics
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
