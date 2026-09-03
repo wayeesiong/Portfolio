@@ -178,31 +178,6 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
   padding: 5.5rem 0 3.5rem;
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-
-  margin-bottom: 1rem;
-  padding: 0.45rem 0.75rem;
-
-  border: 1px solid #d7e0e8;
-  border-radius: 999px;
-
-  background: #ffffff;
-
-  color: #1765a3;
-  font-size: 0.85rem;
-  font-weight: 700;
-
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.back-link:hover {
-  background: #f3f7fa;
-  transform: translateX(-2px);
-}
 
 .project-hero h1 {
   max-width: 1150px;
