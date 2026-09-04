@@ -799,3 +799,80 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 .project-list .project-card {
   margin: 0;
 }
+
+/* =========================================================
+   THESIS PROJECT — TABLE LAYOUT
+   ========================================================= */
+
+.thesis-project .data-table {
+  width: 100%;
+  table-layout: auto;
+}
+
+.thesis-project .data-table th,
+.thesis-project .data-table td {
+  padding: 1rem 1.15rem;
+  vertical-align: middle;
+}
+
+/* Sample table */
+.thesis-project .sample-table th:first-child,
+.thesis-project .sample-table td:first-child {
+  width: 180px;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+/* Hypothesis table */
+.thesis-project .hypothesis-table th:nth-child(1),
+.thesis-project .hypothesis-table td:nth-child(1) {
+  width: 90px;
+  min-width: 90px;
+  white-space: nowrap;
+}
+
+.thesis-project .hypothesis-table th:nth-child(2),
+.thesis-project .hypothesis-table td:nth-child(2) {
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.thesis-project .hypothesis-table th:nth-child(3),
+.thesis-project .hypothesis-table td:nth-child(3),
+.thesis-project .hypothesis-table th:nth-child(4),
+.thesis-project .hypothesis-table td:nth-child(4),
+.thesis-project .hypothesis-table th:nth-child(5),
+.thesis-project .hypothesis-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+/* Total effects table */
+.thesis-project .effects-table th:first-child,
+.thesis-project .effects-table td:first-child {
+  width: 210px;
+  min-width: 210px;
+}
+
+.thesis-project .effects-table th:nth-child(2),
+.thesis-project .effects-table td:nth-child(2) {
+  width: 180px;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .thesis-project .sample-table {
+    min-width: 600px;
+  }
+
+  .thesis-project .hypothesis-table {
+    min-width: 760px;
+  }
+
+  .thesis-project .effects-table {
+    min-width: 720px;
+  }
+
+}
