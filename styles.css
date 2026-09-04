@@ -680,6 +680,122 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
   gap: 1.5rem;
 }
 
+/* =========================================================
+   MARKET RISK PROJECT — TABLE LAYOUT
+   ========================================================= */
+
+.market-risk-project .data-table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.market-risk-project .data-table th,
+.market-risk-project .data-table td {
+  padding: 1rem 1.2rem;
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   PORTFOLIO CONSTRUCTION TABLE
+   ========================================================= */
+
+.market-risk-project .portfolio-table th:first-child,
+.market-risk-project .portfolio-table td:first-child {
+  width: 220px;
+  min-width: 220px;
+}
+
+.market-risk-project .portfolio-table th:nth-child(2),
+.market-risk-project .portfolio-table td:nth-child(2) {
+  width: 100px;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.market-risk-project .portfolio-table th:nth-child(3),
+.market-risk-project .portfolio-table td:nth-child(3) {
+  width: auto;
+}
+
+
+/* =========================================================
+   VAR / EXPECTED SHORTFALL TABLE
+   ========================================================= */
+
+.market-risk-project .var-table th:first-child,
+.market-risk-project .var-table td:first-child {
+  width: 220px;
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+.market-risk-project .var-table th:nth-child(2),
+.market-risk-project .var-table td:nth-child(2) {
+  width: 180px;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.market-risk-project .var-table th:nth-child(3),
+.market-risk-project .var-table td:nth-child(3) {
+  width: auto;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HEDGING STRATEGY TABLE
+   ========================================================= */
+
+.market-risk-project .hedge-table th:first-child,
+.market-risk-project .hedge-table td:first-child {
+  width: 170px;
+  min-width: 170px;
+  white-space: nowrap;
+}
+
+.market-risk-project .hedge-table th:nth-child(2),
+.market-risk-project .hedge-table td:nth-child(2) {
+  width: 120px;
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.market-risk-project .hedge-table th:nth-child(3),
+.market-risk-project .hedge-table td:nth-child(3) {
+  width: 140px;
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.market-risk-project .hedge-table th:nth-child(4),
+.market-risk-project .hedge-table td:nth-child(4) {
+  width: auto;
+}
+
+
+/* =========================================================
+   MOBILE — SCROLL INSTEAD OF UGLY WORD WRAPPING
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .market-risk-project .portfolio-table {
+    min-width: 720px;
+  }
+
+  .market-risk-project .var-table {
+    min-width: 650px;
+  }
+
+  .market-risk-project .hedge-table {
+    min-width: 850px;
+  }
+
+}
+
 .project-list .project-card {
   margin: 0;
 }
