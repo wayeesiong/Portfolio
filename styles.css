@@ -876,3 +876,97 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
   }
 
 }
+
+/* =========================================================
+   MOOMOO PORTFOLIO ANALYTICS PROJECT
+   ========================================================= */
+
+.moomoo-project .project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.moomoo-project .project-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #cfd9e2;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #0a2745;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+.moomoo-project .project-action:hover {
+  transform: translateY(-2px);
+  border-color: #9fb2c3;
+}
+
+.moomoo-project .project-action.primary {
+  background: #0a2745;
+  color: #ffffff;
+  border-color: #0a2745;
+}
+
+.moomoo-project .bottom-actions {
+  margin-top: 2rem;
+}
+
+
+/* TABLES */
+
+.moomoo-project .data-table {
+  width: 100%;
+  table-layout: auto;
+}
+
+.moomoo-project .analytics-table th:first-child,
+.moomoo-project .analytics-table td:first-child {
+  width: 220px;
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+.moomoo-project .market-table th:nth-child(1),
+.moomoo-project .market-table td:nth-child(1) {
+  width: 180px;
+  min-width: 180px;
+}
+
+.moomoo-project .market-table th:nth-child(2),
+.moomoo-project .market-table td:nth-child(2) {
+  width: 130px;
+  min-width: 130px;
+  white-space: nowrap;
+}
+
+.moomoo-project .market-table th:nth-child(3),
+.moomoo-project .market-table td:nth-child(3) {
+  width: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+
+  .moomoo-project .project-actions {
+    flex-direction: column;
+  }
+
+  .moomoo-project .project-action {
+    width: 100%;
+  }
+
+  .moomoo-project .analytics-table {
+    min-width: 650px;
+  }
+
+  .moomoo-project .market-table {
+    min-width: 600px;
+  }
+
+}
