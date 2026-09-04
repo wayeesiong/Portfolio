@@ -946,3 +946,14 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
   transform: translateY(-1px);
   border-color: #9fb2c3;
 }
+
+.moomoo-project .moomoo-resource-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.moomoo-project .moomoo-resource-links .project-action {
+  width: 100%;
+  box-sizing: border-box;
+}
