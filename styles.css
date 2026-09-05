@@ -1220,3 +1220,37 @@ body {
 .project-takeaway strong {
   color: var(--navy);
 }
+
+/* ---------- CAPABILITIES ---------- */
+
+.capability-grid {
+  gap: 28px;
+}
+
+.capability {
+  min-height: 0;
+
+  padding: 20px 0;
+
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--navy);
+  border-radius: 0;
+}
+
+.capability-num {
+  display: none;
+}
+
+.capability h3 {
+  margin-bottom: 8px;
+}
+
+.capability p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.section-soft {
+  background: #fafbfc;
+}
