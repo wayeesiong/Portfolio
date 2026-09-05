@@ -221,651 +221,372 @@
 
 
         <!-- CASE STUDY -->
-        <article class="case-study">
+        <article>
 
-
-          <!-- 01 -->
-          <section class="case-section">
-
-            <div class="section-number">01</div>
-
-            <h2>
-              Problem
-            </h2>
-
+          <!-- 01 PROBLEM -->
+          <section class="article-section">
+        
+            <div class="eyebrow">01 · Problem</div>
+        
+            <h2>Broker trade exports are not portfolio analytics.</h2>
+        
             <p>
-              Brokerage platforms provide account balances and transaction
-              records, but investors may still need to manually reconstruct
-              portfolio cost basis, evaluate actual investment performance and
-              calculate quantitative risk measures.
+              A raw Moomoo trade history records individual executions, but it does not
+              directly answer the questions an investor actually cares about: current
+              cost basis, realised and unrealised profit, portfolio return, market
+              exposure or risk-adjusted performance.
             </p>
-
-            <div class="question-box">
-
-              <strong>
-                How can raw brokerage trade data be converted into a reusable
-                portfolio analytics workflow?
-              </strong>
-
-              <p>
-                I built this application to automate that process using Python,
-                combining trade-level transaction data with market prices,
-                benchmark data and foreign-exchange rates.
-              </p>
-
+        
+            <div class="callout">
+              <strong>Project objective:</strong>
+              turn raw brokerage transaction data into a reusable portfolio-analysis
+              workflow that reconstructs positions, measures actual investor performance
+              and adds market-risk analytics in one interactive dashboard.
             </div>
-
+        
           </section>
-
-
-          <!-- 02 -->
-          <section class="case-section">
-
-            <div class="section-number">02</div>
-
-            <h2>
-              Solution
-            </h2>
-
-            <p>
-              The application allows a user to upload a Moomoo trade-export
-              CSV and automatically reconstructs the portfolio before
-              generating performance and risk analytics.
+        
+        
+          <!-- 02 HOW IT WORKS -->
+          <section id="method" class="article-section">
+        
+            <div class="eyebrow">02 · How it works</div>
+        
+            <h2>From trade-export CSV to portfolio analytics</h2>
+        
+            <p class="subtle">
+              The application separates transaction reconstruction, live valuation,
+              actual investor performance and historical risk modelling.
             </p>
-
-            <div class="finding-grid">
-
-              <div class="finding-card">
-                <div class="finding-stat">1</div>
-                <h3>Upload Trades</h3>
-                <p>
-                  Import executed brokerage transactions directly from a CSV
-                  export.
-                </p>
-              </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">2</div>
-                <h3>Reconstruct Portfolio</h3>
-                <p>
-                  Process purchases and sales chronologically using
-                  weighted-average cost.
-                </p>
-              </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">3</div>
-                <h3>Generate Analytics</h3>
-                <p>
-                  Calculate portfolio performance, market risk and
-                  benchmark-relative statistics.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-
-          <!-- 03 -->
-          <section class="case-section" id="architecture">
-
-            <div class="section-number">03</div>
-
-            <h2>
-              Application Architecture
-            </h2>
-
-            <p>
-              The project separates the financial calculation engine from the
-              Streamlit interface so that the portfolio methodology has a
-              single source of truth.
-            </p>
-
+        
             <div class="workflow">
-
-              <div class="workflow-step">
-                <div class="workflow-num">1</div>
-
-                <div>
-                  <h3>Moomoo Trade Export</h3>
-                  <p>
-                    The user uploads executed transaction history in CSV
-                    format.
-                  </p>
-                </div>
+        
+              <div class="step">
+                <div class="step-num">STEP 01</div>
+        
+                <h3>Upload trades</h3>
+        
+                <p>
+                  Import a Moomoo trade-export CSV containing executed transactions,
+                  quantities, prices, currencies and fees.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-                <div class="workflow-num">2</div>
-
-                <div>
-                  <h3>Data Cleaning & Validation</h3>
-                  <p>
-                    The program validates required fields, cleans numeric
-                    values and identifies the market associated with each
-                    security.
-                  </p>
-                </div>
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 02</div>
+        
+                <h3>Reconstruct positions</h3>
+        
+                <p>
+                  Process buys and sells chronologically to rebuild open and closed
+                  positions using weighted-average cost and realised P/L calculations.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-                <div class="workflow-num">3</div>
-
-                <div>
-                  <h3>Portfolio Engine</h3>
-                  <p>
-                    Python reconstructs positions, cost basis, realized P/L,
-                    foreign-currency exposure and investor cash flows.
-                  </p>
-                </div>
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 03</div>
+        
+                <h3>Fetch market data</h3>
+        
+                <p>
+                  Retrieve current and historical security prices, FX rates,
+                  benchmark data and a U.S. Treasury-bill proxy through yfinance.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-                <div class="workflow-num">4</div>
-
-                <div>
-                  <h3>Market Data</h3>
-                  <p>
-                    Historical asset prices, benchmark data, Treasury yields
-                    and FX rates are retrieved for the quantitative analysis.
-                  </p>
-                </div>
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 04</div>
+        
+                <h3>Generate analytics</h3>
+        
+                <p>
+                  Calculate actual money-weighted performance, current position metrics
+                  and backward-looking portfolio risk before displaying and exporting
+                  the results.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-                <div class="workflow-num">5</div>
-
-                <div>
-                  <h3>Analytics Engine</h3>
-                  <p>
-                    The application calculates investor performance,
-                    historical return, volatility, beta, Sharpe ratio and
-                    Jensen's alpha.
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="workflow-step">
-                <div class="workflow-num">6</div>
-
-                <div>
-                  <h3>Dashboard & Export</h3>
-                  <p>
-                    Results are displayed interactively in Streamlit and can
-                    also be exported into a structured Excel report.
-                  </p>
-                </div>
-              </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 04 -->
-          <section class="case-section">
-
-            <div class="section-number">04</div>
-
-            <h2>
-              Trade-Level Portfolio Accounting
-            </h2>
-
-            <p>
-              One of the main challenges was correctly reconstructing the
-              remaining cost basis after multiple purchases and partial sales.
-            </p>
-
+        
+        
+          <!-- 03 ANALYTICS -->
+          <section id="findings" class="article-section">
+        
+            <div class="eyebrow">03 · Core analytics</div>
+        
+            <h2>Performance and risk are measured separately.</h2>
+        
             <div class="finding-grid">
-
-              <div class="finding-card">
-                <div class="finding-stat">WAC</div>
-                <h3>Weighted-Average Cost</h3>
+        
+              <div class="finding">
+        
+                <strong>Actual investor performance</strong>
+        
                 <p>
-                  Purchases increase the remaining cost basis while sales
-                  remove the average cost associated with the shares sold.
+                  Calculates current market value, realised and unrealised P/L,
+                  estimated dividends, total P/L and money-weighted return using XIRR.
                 </p>
+        
               </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">P/L</div>
-                <h3>Realized vs. Unrealized</h3>
+        
+        
+              <div class="finding">
+        
+                <strong>Position-level analysis</strong>
+        
                 <p>
-                  Completed sales are separated from gains or losses on
-                  securities still held.
+                  Reconstructs shares held, weighted-average cost, current price,
+                  remaining cost basis, portfolio weight, fees and position-level returns.
                 </p>
+        
               </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">Fees</div>
-                <h3>Transaction Costs</h3>
+        
+        
+              <div class="finding">
+        
+                <strong>Historical risk analytics</strong>
+        
                 <p>
-                  Brokerage fees are incorporated into purchase cost and sale
-                  proceeds where available.
+                  Estimates annualised return, CAGR, volatility, beta, Sharpe ratio
+                  and Jensen's alpha using the current portfolio weights over the
+                  selected historical window.
                 </p>
+        
               </div>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Benchmark comparison</strong>
+        
+                <p>
+                  Compares the current-weight portfolio against a selectable market
+                  benchmark and visualises both total and systematic risk-return relationships.
+                </p>
+        
+              </div>
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 05 -->
-          <section class="case-section" id="analytics">
-
-            <div class="section-number">05</div>
-
-            <h2>
-              Actual Investor Performance
-            </h2>
-
+        
+        
+          <!-- 04 TECHNICAL DESIGN -->
+          <section class="article-section">
+        
+            <div class="eyebrow">04 · Technical design</div>
+        
+            <h2>A separate analytics engine keeps the calculations independent of the UI.</h2>
+        
             <p>
-              The application separates actual investor performance from
-              historical portfolio-model estimates.
+              The project separates the Streamlit front end from the core portfolio
+              analytics engine. The user interface handles file upload, settings and
+              result presentation, while the engine performs trade reconstruction,
+              valuation, performance calculations, risk estimation and reporting.
             </p>
-
-            <table class="data-table analytics-table">
-
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  <th>Purpose</th>
-                </tr>
-              </thead>
-
-              <tbody>
-
-                <tr>
-                  <td>Current Market Value</td>
-                  <td>
-                    Current USD value of active holdings.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Unrealized P/L</td>
-                  <td>
-                    Gain or loss on positions that remain open.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Realized P/L</td>
-                  <td>
-                    Gain or loss crystallized through completed sales.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Estimated Dividends</td>
-                  <td>
-                    Estimated dividend income based on historical holding
-                    quantities.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Money-Weighted Return</td>
-                  <td>
-                    XIRR based on the amount and timing of investor cash flows.
-                  </td>
-                </tr>
-
-              </tbody>
-
-            </table>
-
-          </section>
-
-
-          <!-- 06 -->
-          <section class="case-section">
-
-            <div class="section-number">06</div>
-
-            <h2>
-              Historical Risk & Return Analytics
-            </h2>
-
-            <p>
-              Current portfolio weights are applied to historical asset
-              returns to estimate how the current allocation has behaved over
-              the selected historical period.
-            </p>
-
+        
             <div class="finding-grid">
-
-              <div class="finding-card">
-                <div class="finding-stat">σ</div>
-                <h3>Volatility</h3>
+        
+              <div class="finding">
+        
+                <strong>Python analytics engine</strong>
+        
                 <p>
-                  Measures annualized total portfolio risk using the covariance
-                  structure of the holdings.
+                  Pandas and NumPy handle transaction processing, portfolio
+                  calculations and tabular analytics.
                 </p>
+        
               </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">β</div>
-                <h3>Beta</h3>
+        
+        
+              <div class="finding">
+        
+                <strong>Live market integration</strong>
+        
                 <p>
-                  Measures sensitivity of portfolio returns relative to the
-                  selected benchmark.
+                  yfinance supplies security prices, foreign-exchange data,
+                  benchmark histories and the risk-free-rate proxy.
                 </p>
+        
               </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">S</div>
-                <h3>Sharpe Ratio</h3>
+        
+        
+              <div class="finding">
+        
+                <strong>Streamlit interface</strong>
+        
                 <p>
-                  Evaluates excess historical return per unit of total risk.
+                  Users can upload trade data, select the benchmark and historical
+                  window, review warnings and interact with the resulting analytics.
                 </p>
+        
               </div>
-
-              <div class="finding-card">
-                <div class="finding-stat">α</div>
-                <h3>Jensen's Alpha</h3>
+        
+        
+              <div class="finding">
+        
+                <strong>Automated reporting</strong>
+        
                 <p>
-                  Compares portfolio return with the return implied by CAPM.
+                  The application generates an Excel workbook containing summary,
+                  allocation, position, trade, XIRR, methodology and warning sheets.
                 </p>
+        
               </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 07 -->
-          <section class="case-section">
-
-            <div class="section-number">07</div>
-
-            <h2>
-              Multi-Currency Portfolio Support
-            </h2>
-
+        
+        
+          <!-- 05 METHODOLOGY CHOICES -->
+          <section class="article-section">
+        
+            <div class="eyebrow">05 · Methodology choices</div>
+        
+            <h2>Distinguishing what the investor earned from what the portfolio historically implies</h2>
+        
             <p>
-              The application reports results in USD while allowing securities
-              from multiple markets to be processed consistently.
+              A central design decision was to keep actual investment performance
+              separate from hypothetical historical portfolio analytics.
             </p>
-
-            <table class="data-table market-table">
-
-              <thead>
-                <tr>
-                  <th>Market</th>
-                  <th>Currency</th>
-                  <th>Example Yahoo Format</th>
-                </tr>
-              </thead>
-
-              <tbody>
-
-                <tr>
-                  <td>United States</td>
-                  <td>USD</td>
-                  <td>AAPL</td>
-                </tr>
-
-                <tr>
-                  <td>Malaysia</td>
-                  <td>MYR</td>
-                  <td>1155.KL</td>
-                </tr>
-
-                <tr>
-                  <td>Hong Kong</td>
-                  <td>HKD</td>
-                  <td>9988.HK</td>
-                </tr>
-
-              </tbody>
-
-            </table>
-
-            <p>
-              Historical transactions use foreign-exchange rates around the
-              trade date, while current positions use the latest available FX
-              rate for valuation.
-            </p>
-
+        
+            <ul>
+        
+              <li>
+                <strong>Weighted-average cost:</strong>
+                remaining position cost basis is reconstructed chronologically, while
+                partial sales realise P/L against the blended cost immediately before
+                the sale.
+              </li>
+        
+              <li>
+                <strong>Trade-date FX:</strong>
+                non-USD trades and fees are converted using FX data around the original
+                transaction date rather than today's exchange rate.
+              </li>
+        
+              <li>
+                <strong>XIRR:</strong>
+                actual dated buy and sell cash flows, estimated dividends and current
+                portfolio value are used to estimate money-weighted annualised return.
+              </li>
+        
+              <li>
+                <strong>Historical analytics:</strong>
+                today's portfolio weights are applied retrospectively to historical
+                returns for risk modelling and benchmark comparison.
+              </li>
+        
+              <li>
+                <strong>Benchmark dependence:</strong>
+                beta and Jensen's alpha depend on the benchmark selected by the user.
+              </li>
+        
+              <li>
+                <strong>Risk-free proxy:</strong>
+                the latest 13-week U.S. Treasury-bill yield is used for Sharpe-ratio
+                and Jensen-alpha calculations.
+              </li>
+        
+            </ul>
+        
           </section>
-
-
-          <!-- 08 -->
-          <section class="case-section">
-
-            <div class="section-number">08</div>
-
-            <h2>
-              Visual Analytics & Reporting
-            </h2>
-
-            <p>
-              The dashboard translates the quantitative outputs into a more
-              accessible investor-facing interface.
-            </p>
-
-            <div class="takeaway-list">
-
-              <div class="takeaway-item">
-                <strong>Portfolio Allocation</strong>
-                <span>
-                  Shows the current market-value weight of each security.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Total Risk vs. Return</strong>
-                <span>
-                  Compares portfolio return and volatility with the benchmark
-                  and a Capital Market Line reference.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Systematic Risk vs. Return</strong>
-                <span>
-                  Displays beta and CAPM-implied return through a Security
-                  Market Line visualization.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Excel Export</strong>
-                <span>
-                  Generates a structured workbook containing portfolio
-                  summaries, positions, cash flows and methodology.
-                </span>
-              </div>
-
-            </div>
-
+        
+        
+          <!-- 06 LIMITATIONS -->
+          <section class="article-section">
+        
+            <div class="eyebrow">06 · Limitations</div>
+        
+            <h2>What the dashboard should not be interpreted as</h2>
+        
+            <ul>
+        
+              <li>
+                Historical current-weight returns are backward-looking estimates and
+                are not the investor's realised historical return.
+              </li>
+        
+              <li>
+                Risk estimates depend on the selected history window and may become
+                noisy when holdings have limited overlapping price histories.
+              </li>
+        
+              <li>
+                Market prices, FX data and dividend information rely on Yahoo Finance
+                coverage and may differ from broker records or execution prices.
+              </li>
+        
+              <li>
+                Estimated dividends may differ from actual cash receipts because of
+                withholding tax, missing data or corporate actions.
+              </li>
+        
+              <li>
+                Complete trade history is required for reliable cost-basis and XIRR
+                reconstruction; unsupported or incomplete transaction histories can
+                trigger methodology warnings.
+              </li>
+        
+              <li>
+                Short positions are not supported by the current portfolio engine.
+              </li>
+        
+            </ul>
+        
           </section>
-
-
-          <!-- 09 -->
-          <section class="case-section">
-
-            <div class="section-number">09</div>
-
-            <h2>
-              Data Validation
-            </h2>
-
+        
+        
+          <!-- 07 RECRUITER TAKEAWAY -->
+          <section class="article-section">
+        
+            <div class="eyebrow">07 · Recruiter takeaway</div>
+        
+            <h2>What this project demonstrates</h2>
+        
             <p>
-              Financial analytics can become misleading when transaction
-              history is incomplete, so the application performs validation
-              before calculating portfolio statistics.
+              This project demonstrates the ability to translate a practical investment
+              problem into an end-to-end analytics product: cleaning brokerage data,
+              implementing portfolio-accounting logic, integrating live financial data,
+              calculating performance and risk measures, designing an interactive
+              interface and communicating methodological limitations clearly.
             </p>
-
-            <div class="takeaway-list">
-
-              <div class="takeaway-item">
-                <strong>Required Fields</strong>
-                <span>
-                  Checks whether the required trade-export columns are
-                  available.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Incomplete Trade History</strong>
-                <span>
-                  Detects situations where recorded sales exceed reconstructed
-                  holdings.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Market Data</strong>
-                <span>
-                  Raises warnings when required historical market or
-                  foreign-exchange data are unavailable.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Short Samples</strong>
-                <span>
-                  Warns when overlapping historical observations are
-                  insufficient for stable risk estimation.
-                </span>
-              </div>
-
-            </div>
-
-          </section>
-
-
-          <!-- 10 -->
-          <section class="case-section">
-
-            <div class="section-number">10</div>
-
-            <h2>
-              Limitations
-            </h2>
-
-            <div class="takeaway-list">
-
-              <div class="takeaway-item">
-                <strong>Historical estimation</strong>
-                <span>
-                  Past return, volatility and correlation may not represent
-                  future market behaviour.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Market-data source</strong>
-                <span>
-                  Yahoo Finance data may differ from official brokerage
-                  statements or exchange data.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Dividend estimation</strong>
-                <span>
-                  Dividend income is estimated and may not capture withholding
-                  taxes or broker-specific adjustments.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Transaction completeness</strong>
-                <span>
-                  XIRR and cost-basis calculations depend on complete trade
-                  history.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Short positions</strong>
-                <span>
-                  The current version focuses on long-only portfolio
-                  analytics.
-                </span>
-              </div>
-
-            </div>
-
-          </section>
-
-
-          <!-- 11 -->
-          <section class="case-section">
-
-            <div class="section-number">11</div>
-
-            <h2>
-              Recruiter Takeaway
-            </h2>
-
-            <p>
-              This project demonstrates my ability to translate investment
-              concepts into a practical software application, combining
-              financial modelling, Python development, data processing and
-              user-facing analytics.
-            </p>
-
-            <div class="finding-grid">
-
-              <div class="finding-card">
-                <h3>Finance</h3>
-                <p>
-                  Applied portfolio accounting, XIRR, CAPM, risk-adjusted
-                  performance and benchmark analysis.
-                </p>
-              </div>
-
-              <div class="finding-card">
-                <h3>Programming</h3>
-                <p>
-                  Built a reusable Python analytics engine and separated it
-                  from the Streamlit front end.
-                </p>
-              </div>
-
-              <div class="finding-card">
-                <h3>Practical Application</h3>
-                <p>
-                  Converted raw brokerage transactions into an interactive
-                  tool designed for repeated personal portfolio analysis.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="project-actions bottom-actions">
-
-              <a class="project-action primary"
-                 href="https://moomoo-portfolio-analytics-ujnfyawizhbyvuzhdh5xlx.streamlit.app/"
-                 target="_blank"
-                 rel="noopener">
-                Try the Live Dashboard ↗
+        
+            <div class="hero-actions">
+        
+              <a
+                class="button primary"
+                href="YOUR-CURRENT-LIVE-APP-LINK"
+                target="_blank"
+                rel="noopener"
+              >
+                Open live dashboard
               </a>
-
-              <a class="project-action"
-                 href="https://github.com/wayeesiong/moomoo-portfolio-analytics"
-                 target="_blank"
-                 rel="noopener">
-                Explore the Code ↗
+        
+              <a
+                class="button secondary"
+                href="YOUR-CURRENT-GITHUB-LINK"
+                target="_blank"
+                rel="noopener"
+              >
+                View source code ↗
               </a>
-
+        
+              <a class="text-link" href="index.html">
+                ← Back to portfolio
+              </a>
+        
             </div>
-
+        
           </section>
-
-
+        
         </article>
-
       </div>
     </section>
 
