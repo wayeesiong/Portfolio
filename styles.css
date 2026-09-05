@@ -70,7 +70,7 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 .project-main-link { display: grid; grid-template-columns: 1.25fr .75fr; text-decoration: none; }
 .project-copy { padding: 42px; }
 .project-kicker { color: var(--blue); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; font-size: 0.74rem; }
-.project-title { font-size: clamp(1.65rem, 3vw, 2.3rem); margin: 10px 0 16px; }
+.project-title { font-size: clamp(1.6rem, 2.6vw, 2.15rem); line-height: 1.15; margin: 10px 0 16px; }
 .project-copy p { color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .tag { background: var(--surface-2); border: 1px solid var(--line); padding: 7px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; color: #38506a; }
