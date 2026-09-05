@@ -236,691 +236,359 @@
 
 
         <!-- CASE STUDY -->
-        <article class="case-study">
+        <article>
 
-
-          <!-- 01 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              01 · Risk Management Question
-            </div>
-
-            <h2>
-              How much downside risk does the portfolio carry, and how should it be hedged?
-            </h2>
-
+          <!-- 01 RESEARCH QUESTION -->
+          <section class="article-section">
+        
+            <div class="eyebrow">01 · Risk question</div>
+        
+            <h2>How much market risk does the portfolio carry, and how should it be hedged?</h2>
+        
             <p>
-              The project constructs a hypothetical $1 billion portfolio
-              allocated equally across five Hong Kong and China-related equity
-              indices. Each index represents 20% of the initial portfolio.
+              This project evaluates the market-risk exposure of a $1 billion
+              Hong Kong and China equity-index portfolio. The analysis compares
+              several approaches to Value at Risk and Expected Shortfall before
+              assessing how futures and put options can be used to control downside risk.
             </p>
-
-            <p>
-              The objective was not only to quantify market risk, but also to
-              evaluate how alternative derivative strategies change the
-              portfolio's exposure to adverse market movements.
-            </p>
-
-            <div class="question-box">
-
-              How do Historical Simulation, Delta-Normal and Monte Carlo
-              approaches differ in their estimates of portfolio tail risk, and
-              what are the trade-offs between remaining unhedged, using index
-              futures and purchasing index put options?
-
+        
+            <div class="callout">
+              <strong>Core objective:</strong>
+              quantify potential portfolio losses under different risk models and
+              determine how alternative derivative hedges change the portfolio's
+              downside protection, cost and upside participation.
             </div>
-
+        
           </section>
-
-
-          <!-- 02 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              02 · Portfolio Construction
-            </div>
-
-            <h2>
-              A diversified Hong Kong / China equity-index portfolio
-            </h2>
-
-            <p>
-              The initial $1 billion portfolio was divided equally across five
-              equity indices. Historical index values were converted into U.S.
-              dollar terms using the USD/HKD exchange rate before portfolio
-              returns and risk measures were calculated.
+        
+        
+          <!-- 02 METHODOLOGY -->
+          <section id="method" class="article-section">
+        
+            <div class="eyebrow">02 · Methodology</div>
+        
+            <h2>From portfolio exposure to downside-risk management</h2>
+        
+            <p class="subtle">
+              The analysis combines market-beta estimation, multiple VaR approaches
+              and scenario-based derivative hedging.
             </p>
-
-
-            <div class="data-table-wrapper">
-
-              <table class="data-table portfolio-table">
-
-                <thead>
-                  <tr>
-                    <th>Index</th>
-                    <th>Weight</th>
-                    <th>Role</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-
-                  <tr>
-                    <td>HSI</td>
-                    <td>20%</td>
-                    <td>Broad Hong Kong equity exposure</td>
-                  </tr>
-
-                  <tr>
-                    <td>FTSE China 50</td>
-                    <td>20%</td>
-                    <td>Large Hong Kong-listed Chinese companies</td>
-                  </tr>
-
-                  <tr>
-                    <td>HSTECH</td>
-                    <td>20%</td>
-                    <td>Technology-oriented exposure</td>
-                  </tr>
-
-                  <tr>
-                    <td>HSCEI</td>
-                    <td>20%</td>
-                    <td>Mainland Chinese enterprises listed in Hong Kong</td>
-                  </tr>
-
-                  <tr>
-                    <td>HSCCI</td>
-                    <td>20%</td>
-                    <td>China-affiliated corporations</td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-          </section>
-
-
-          <!-- 03 -->
-          <section id="method" class="case-section">
-
-            <div class="section-number">
-              03 · Methodology
-            </div>
-
-            <h2>
-              From market exposure to tail-risk measurement and hedging
-            </h2>
-
-
+        
             <div class="workflow">
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">01</div>
-
-                <div>
-                  <h3>Construct Portfolio</h3>
-
-                  <p>
-                    Allocate $200 million to each of the five indices and
-                    convert index values into U.S. dollar terms.
-                  </p>
-                </div>
-
+        
+              <div class="step">
+                <div class="step-num">STEP 01</div>
+        
+                <h3>Construct portfolio</h3>
+        
+                <p>
+                  Build a $1 billion portfolio using five Hong Kong and China
+                  equity indices with equal 20% allocations.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">02</div>
-
-                <div>
-                  <h3>Estimate Market Beta</h3>
-
-                  <p>
-                    Regress portfolio daily returns against S&P 500 returns to
-                    estimate systematic market sensitivity.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 02</div>
+        
+                <h3>Estimate market exposure</h3>
+        
+                <p>
+                  Regress portfolio returns against the S&amp;P 500 to estimate
+                  systematic market sensitivity through beta.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">03</div>
-
-                <div>
-                  <h3>Historical Simulation</h3>
-
-                  <p>
-                    Estimate 99% VaR and Expected Shortfall directly from the
-                    historical portfolio loss distribution.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 03</div>
+        
+                <h3>Measure tail risk</h3>
+        
+                <p>
+                  Estimate 99% one-day VaR and Expected Shortfall using historical
+                  simulation, delta-normal and Monte Carlo approaches.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">04</div>
-
-                <div>
-                  <h3>Delta-Normal VaR</h3>
-
-                  <p>
-                    Apply a parametric approach based on portfolio mean,
-                    volatility and a normal-distribution assumption.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 04</div>
+        
+                <h3>Compare hedges</h3>
+        
+                <p>
+                  Evaluate an unhedged portfolio against E-mini S&amp;P 500 futures
+                  and put-option hedges under different market scenarios.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">05</div>
-
-                <div>
-                  <h3>Monte Carlo Simulation</h3>
-
-                  <p>
-                    Generate 1,000 simulated portfolio-loss outcomes and
-                    estimate VaR and Expected Shortfall from the simulated
-                    distribution.
-                  </p>
-                </div>
-
-              </div>
-
-
-              <div class="workflow-step">
-
-                <div class="workflow-num">06</div>
-
-                <div>
-                  <h3>Evaluate Hedging Strategies</h3>
-
-                  <p>
-                    Compare an unhedged portfolio with E-mini S&P 500 futures
-                    and put-option hedging under multiple market scenarios.
-                  </p>
-                </div>
-
-              </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 04 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              04 · Market Exposure
-            </div>
-
-            <h2>
-              Low S&P 500 beta, but substantial risk remains
-            </h2>
-
-            <p>
-              Regression analysis produced a portfolio beta of approximately
-              0.2554 against the S&P 500. This indicates relatively low
-              sensitivity to movements in the U.S. equity benchmark.
-            </p>
-
-            <p>
-              However, the regression R² was only approximately 1.31%.
-              Therefore, S&P 500 movements explain only a small proportion of
-              the portfolio's daily return variation. The portfolio may appear
-              defensive relative to the S&P 500 while still being exposed to
-              significant regional, sector and cross-market risk.
-            </p>
-
-
+        
+        
+          <!-- 03 PORTFOLIO -->
+          <section class="article-section">
+        
+            <div class="eyebrow">03 · Portfolio &amp; data</div>
+        
+            <h2>A diversified regional equity-index portfolio</h2>
+        
+            <ul>
+        
+              <li>
+                <strong>Portfolio value:</strong>
+                $1 billion.
+              </li>
+        
+              <li>
+                <strong>Portfolio composition:</strong>
+                five Hong Kong and China equity indices, each allocated 20%.
+              </li>
+        
+              <li>
+                <strong>Observation period:</strong>
+                316 market days used in the risk analysis.
+              </li>
+        
+              <li>
+                <strong>Market benchmark:</strong>
+                S&amp;P 500 for portfolio-beta estimation and hedging analysis.
+              </li>
+        
+              <li>
+                <strong>Risk measures:</strong>
+                99% Value at Risk and Expected Shortfall.
+              </li>
+        
+              <li>
+                <strong>Hedging instruments:</strong>
+                E-mini S&amp;P 500 futures and put options.
+              </li>
+        
+            </ul>
+        
+          </section>
+        
+        
+          <!-- 04 FINDINGS -->
+          <section id="findings" class="article-section">
+        
+            <div class="eyebrow">04 · Key findings</div>
+        
+            <h2>Different risk models produced similar VaR estimates but very different tail-loss estimates.</h2>
+        
             <div class="finding-grid">
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  0.2554
-                </div>
-
-                <h3>
-                  Portfolio beta
-                </h3>
-
+        
+              <div class="finding">
+        
+                <strong>$39.88m Historical VaR</strong>
+        
                 <p>
-                  The portfolio exhibits relatively low sensitivity to changes
-                  in the S&P 500.
+                  Historical simulation produced the lowest 99% one-day VaR,
+                  equivalent to approximately 3.99% of the $1 billion portfolio.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  1.31%
-                </div>
-
-                <h3>
-                  Regression R²
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>$41.37m Delta-Normal VaR</strong>
+        
                 <p>
-                  U.S. equity-market movements explain only a small proportion
-                  of total portfolio-return variation.
+                  The delta-normal method produced the highest VaR estimate,
+                  reflecting its assumption of a normally distributed loss process.
                 </p>
-
+        
               </div>
-
+        
+        
+              <div class="finding">
+        
+                <strong>$39.93m Monte Carlo VaR</strong>
+        
+                <p>
+                  Monte Carlo simulation generated a VaR estimate close to the
+                  historical result while allowing simulated loss outcomes to be examined.
+                </p>
+        
+              </div>
+        
+        
+              <div class="finding">
+        
+                <strong>β = 0.255</strong>
+        
+                <p>
+                  The portfolio exhibited relatively low sensitivity to S&amp;P 500
+                  movements, although its return distribution still displayed
+                  substantial downside-tail risk.
+                </p>
+        
+              </div>
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 05 -->
-          <section id="findings" class="case-section">
-
-            <div class="section-number">
-              05 · VaR & Expected Shortfall
-            </div>
-
-            <h2>
-              VaR estimates converge near $40 million — tail-loss estimates do not
-            </h2>
-
+        
+        
+          <!-- 05 TAIL RISK -->
+          <section class="article-section">
+        
+            <div class="eyebrow">05 · Tail-risk interpretation</div>
+        
+            <h2>Low market beta does not mean low extreme-loss risk.</h2>
+        
             <p>
-              The three methodologies produced similar one-day 99% VaR
-              estimates, ranging from approximately $39.88 million to $41.37
-              million.
+              The portfolio beta of approximately 0.255 suggests relatively low
+              sensitivity to movements in the S&amp;P 500. However, the portfolio-value
+              distribution was negatively skewed and highly leptokurtic, indicating
+              heavier downside tails than a normal distribution would imply.
             </p>
-
+        
             <p>
-              Expected Shortfall tells a different story. Historical Simulation
-              produced a substantially larger ES because severe losses observed
-              in the historical sample remain directly represented in the tail
-              of the empirical distribution.
+              This distinction matters because beta measures systematic market
+              sensitivity, while VaR and Expected Shortfall focus on the size of
+              potential portfolio losses. A portfolio can therefore have relatively
+              low market beta while still experiencing meaningful tail-risk exposure.
             </p>
-
-
-            <div class="data-table-wrapper">
-
-              <table class="data-table var-table">
-
-                <thead>
-                  <tr>
-                    <th>Method</th>
-                    <th>99% VaR</th>
-                    <th>99% Expected Shortfall</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-
-                  <tr>
-                    <td>Historical Simulation</td>
-                    <td>$39.88m</td>
-                    <td>$85.97m</td>
-                  </tr>
-
-                  <tr>
-                    <td>Delta-Normal</td>
-                    <td>$41.37m</td>
-                    <td>$47.61m</td>
-                  </tr>
-
-                  <tr>
-                    <td>Monte Carlo</td>
-                    <td>$39.93m</td>
-                    <td>$45.74m</td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-
+        
+          </section>
+        
+        
+          <!-- 06 HEDGING -->
+          <section class="article-section">
+        
+            <div class="eyebrow">06 · Hedging comparison</div>
+        
+            <h2>Futures maximise protection; options preserve upside.</h2>
+        
             <div class="finding-grid">
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  $39.88m–$41.37m
-                </div>
-
-                <h3>
-                  Narrow VaR range
-                </h3>
-
+        
+              <div class="finding">
+        
+                <strong>Unhedged portfolio</strong>
+        
                 <p>
-                  Despite different methodologies, the estimated 99% VaR is
-                  relatively consistent across the three approaches.
+                  Retains full participation in market gains but remains fully exposed
+                  to losses when equity markets decline.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  $85.97m
-                </div>
-
-                <h3>
-                  Historical Expected Shortfall
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Futures hedge</strong>
+        
                 <p>
-                  Extreme historical loss observations lead to a much larger
-                  tail-loss estimate than the other approaches.
+                  Provides the strongest and lower-cost protection by offsetting
+                  portfolio movements, but sacrifices the opportunity to benefit
+                  from favourable market gains.
                 </p>
-
+        
               </div>
-
-            </div>
-
-          </section>
-
-
-          <!-- 06 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              06 · Distribution Risk
-            </div>
-
-            <h2>
-              Negative skewness and fat tails challenge normal assumptions
-            </h2>
-
-            <p>
-              Across 316 observed portfolio values, the distribution displayed
-              negative skewness of approximately -1.30 and kurtosis of
-              approximately 10.88.
-            </p>
-
-            <p>
-              These characteristics indicate an asymmetric and leptokurtic
-              distribution in which extreme downside outcomes occur more
-              frequently than would be suggested by a normal distribution.
-              This is particularly important when interpreting parametric risk
-              measures.
-            </p>
-
-
-            <div class="finding-grid">
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  -1.30
-                </div>
-
-                <h3>
-                  Negative skewness
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Put-option hedge</strong>
+        
                 <p>
-                  The distribution contains greater downside asymmetry than a
-                  symmetric normal distribution.
+                  Places a floor on downside exposure while preserving upside
+                  participation, but requires payment of an option premium.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  10.88
-                </div>
-
-                <h3>
-                  Kurtosis
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Strategy depends on outlook</strong>
+        
                 <p>
-                  The portfolio exhibits pronounced fat-tail characteristics.
+                  Futures are more appropriate when downside protection is the
+                  dominant objective, while options provide greater flexibility when
+                  large movements in either direction remain possible.
                 </p>
-
+        
               </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 07 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              07 · Hedging Strategy
-            </div>
-
-            <h2>
-              Futures neutralise market exposure; put options preserve upside
-            </h2>
-
-            <p>
-              Three portfolio strategies were evaluated: remaining unhedged,
-              shorting E-mini S&P 500 futures, and purchasing E-mini S&P 500 put
-              options.
-            </p>
-
-
-            <div class="data-table-wrapper">
-
-              <table class="data-table hedge-table">
-
-                <thead>
-                  <tr>
-                    <th>Strategy</th>
-                    <th>Protection</th>
-                    <th>Upside</th>
-                    <th>Trade-off</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-
-                  <tr>
-                    <td>Unhedged</td>
-                    <td>Low</td>
-                    <td>Full</td>
-                    <td>Retains full market exposure</td>
-                  </tr>
-
-                  <tr>
-                    <td>Futures Hedge</td>
-                    <td>High</td>
-                    <td>Very limited</td>
-                    <td>Market exposure largely neutralised</td>
-                  </tr>
-
-                  <tr>
-                    <td>Put Option Hedge</td>
-                    <td>High</td>
-                    <td>Retained</td>
-                    <td>Requires an upfront option premium</td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-
-            <p>
-              Under the futures strategy, gains and losses on the hedge
-              approximately offset changes in the underlying portfolio,
-              keeping its value close to $1 billion across the scenario range.
-            </p>
-
-            <p>
-              The option strategy instead provides asymmetric protection. A
-              slightly out-of-the-money E-mini S&P 500 put with a 5,550 strike
-              was evaluated, with a total premium of approximately $1.87
-              million. This creates downside protection while retaining
-              participation in favourable market movements.
-            </p>
-
+        
+        
+          <!-- 07 LIMITATIONS -->
+          <section class="article-section">
+        
+            <div class="eyebrow">07 · Limitations</div>
+        
+            <h2>Risk estimates depend on model assumptions.</h2>
+        
+            <ul>
+        
+              <li>
+                Historical VaR reflects observed market outcomes and may fail to
+                capture extreme events that did not occur within the historical sample.
+              </li>
+        
+              <li>
+                Delta-normal VaR assumes a normal loss distribution even though
+                the observed portfolio distribution was negatively skewed and fat-tailed.
+              </li>
+        
+              <li>
+                Monte Carlo results depend on the assumptions used to generate
+                simulated return scenarios.
+              </li>
+        
+              <li>
+                Hedging effectiveness is sensitive to portfolio beta, contract pricing,
+                transaction costs, liquidity and changes in market conditions.
+              </li>
+        
+            </ul>
+        
           </section>
-
-
-          <!-- 08 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              08 · Limitations
-            </div>
-
-            <h2>
-              Model output is only one part of the risk-management decision
-            </h2>
-
+        
+        
+          <!-- 08 RECRUITER TAKEAWAY -->
+          <section class="article-section">
+        
+            <div class="eyebrow">08 · Recruiter takeaway</div>
+        
+            <h2>What this project demonstrates</h2>
+        
             <p>
-              The analysis illustrates several practical limitations that
-              should be considered when interpreting the results.
+              This project demonstrates the ability to quantify market risk using
+              multiple VaR frameworks, distinguish systematic exposure from tail risk,
+              compare derivative hedging alternatives and translate quantitative risk
+              estimates into practical risk-management decisions.
             </p>
-
-
-            <div class="takeaway-list">
-
-              <div class="takeaway-item">
-                <strong>Basis risk</strong>
-                <span>
-                  The portfolio contains Hong Kong / China equity exposure,
-                  while the hedge uses S&P 500 derivatives. The low regression
-                  R² suggests that the hedge may not capture all major sources
-                  of portfolio risk.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Historical dependence</strong>
-                <span>
-                  Historical Simulation depends on the selected observation
-                  window and may not capture future market regimes.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Distribution assumption</strong>
-                <span>
-                  Delta-Normal VaR assumes normally distributed losses despite
-                  evidence of negative skewness and high kurtosis.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Simulation risk</strong>
-                <span>
-                  Monte Carlo results depend on modelling assumptions and the
-                  number of simulated scenarios.
-                </span>
-              </div>
-
-              <div class="takeaway-item">
-                <strong>Implementation</strong>
-                <span>
-                  Transaction costs, liquidity, margin requirements,
-                  collateral and regulatory constraints affect real-world
-                  hedge performance.
-                </span>
-              </div>
-
+        
+            <div class="hero-actions">
+        
+              <!-- Replace this href with your existing report link -->
+              <a
+                class="button primary"
+                href="YOUR-EXISTING-REPORT-LINK"
+                target="_blank"
+                rel="noopener"
+              >
+                Open full academic report
+              </a>
+        
+              <a class="button secondary" href="index.html">
+                ← Back to portfolio
+              </a>
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 09 -->
-          <section class="case-section recruiter-section">
-
-            <div class="section-number">
-              09 · Recruiter Takeaway
-            </div>
-
-            <h2>
-              What this project demonstrates
-            </h2>
-
-
-            <div class="takeaway-list">
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Market risk measurement
-                </strong>
-
-                <span>
-                  Applied multiple VaR and Expected Shortfall methodologies
-                  rather than relying on a single risk measure.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Quantitative modelling
-                </strong>
-
-                <span>
-                  Used regression, descriptive statistics and Monte Carlo
-                  simulation to analyse portfolio risk.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Derivatives
-                </strong>
-
-                <span>
-                  Applied futures and options to evaluate alternative portfolio
-                  hedging structures.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Risk interpretation
-                </strong>
-
-                <span>
-                  Connected quantitative outputs with model assumptions,
-                  market exposure, tail risk and implementation constraints.
-                </span>
-
-              </div>
-
-            </div>
-
-          </section>
-
-
+        
         </article>
 
       </div>
