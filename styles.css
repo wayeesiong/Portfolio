@@ -1541,3 +1541,14 @@ body {
   margin: 10px 0;
   line-height: 1.65;
 }
+
+/* Fix first metric alignment */
+.metric-strip > .metric-item:first-child {
+  padding-left: 24px;
+}
+
+@media (max-width: 560px) {
+  .metric-strip > .metric-item:first-child {
+    padding-left: 0;
+  }
+}
