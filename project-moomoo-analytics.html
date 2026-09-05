@@ -23,8 +23,11 @@
       </a>
 
       <nav class="navlinks" aria-label="Project navigation">
-        <a href="#architecture">Architecture</a>
-        <a href="#analytics">Analytics</a>
+        <a href="#brief">Overview</a>
+
+        <a href="#method">How It Works</a>
+      
+        <a href="#findings">Analytics</a>
 
         <a href="https://moomoo-portfolio-analytics-ujnfyawizhbyvuzhdh5xlx.streamlit.app/"
            target="_blank"
@@ -48,137 +51,173 @@
     <!-- HERO -->
     <section class="project-hero">
       <div class="container">
-
-        <div class="project-kicker">
-          Python & Investment Analytics · Personal Project
+    
+        <div class="eyebrow">
+          Python &amp; Investment Analytics · Personal Project
         </div>
-
+    
         <h1>
-          Moomoo Portfolio Risk & Performance Analytics Dashboard
+          Moomoo Portfolio Risk &amp; Performance Analytics Dashboard
         </h1>
-
-        <p class="project-lead">
-          Built a Python and Streamlit application that transforms Moomoo
-          trade exports into portfolio performance, weighted-average cost,
-          money-weighted return and market-risk analytics using market and
-          foreign-exchange data.
+    
+        <p class="lead">
+          A Python and Streamlit application that converts Moomoo trade exports
+          into position-level cost basis, actual money-weighted performance and
+          historical portfolio-risk analytics using live market and FX data.
         </p>
-
-        <div class="project-meta">
-          <span>Python</span>
-          <span>Streamlit</span>
-          <span>pandas</span>
-          <span>NumPy</span>
-          <span>yfinance</span>
-          <span>Portfolio Analytics</span>
-          <span>CAPM</span>
+    
+        <div class="meta-row">
+          <span class="meta-pill">Personal Project</span>
+          <span class="meta-pill">Python · Streamlit</span>
+          <span class="meta-pill">Portfolio Analytics</span>
+          <span class="meta-pill">Live Application</span>
         </div>
-
-        <div class="project-actions">
-
-          <a class="project-action primary"
-             href="https://moomoo-portfolio-analytics-ujnfyawizhbyvuzhdh5xlx.streamlit.app/"
-             target="_blank"
-             rel="noopener">
-            Launch Live Dashboard ↗
-          </a>
-
-          <a class="project-action"
-             href="https://github.com/wayeesiong/moomoo-portfolio-analytics"
-             target="_blank"
-             rel="noopener">
-            View GitHub ↗
-          </a>
-
+    
+        <div class="metric-strip" aria-label="Project highlights">
+    
+          <div class="metric-item">
+            <strong>XIRR</strong>
+            <span>Actual money-weighted investor return</span>
+          </div>
+    
+          <div class="metric-item">
+            <strong>WAC</strong>
+            <span>Weighted-average cost basis reconstruction</span>
+          </div>
+    
+          <div class="metric-item">
+            <strong>Live FX</strong>
+            <span>Multi-market positions converted to USD</span>
+          </div>
+    
+          <div class="metric-item">
+            <strong>8+</strong>
+            <span>Portfolio performance and risk metrics</span>
+          </div>
+    
         </div>
-
-        <div class="project-metrics">
-
-          <div class="metric">
-            <div class="metric-value">XIRR</div>
-            <div class="metric-label">Money-weighted return</div>
-          </div>
-
-          <div class="metric">
-            <div class="metric-value">WAC</div>
-            <div class="metric-label">Cost-basis reconstruction</div>
-          </div>
-
-          <div class="metric">
-            <div class="metric-value">3</div>
-            <div class="metric-label">Markets supported</div>
-          </div>
-
-          <div class="metric">
-            <div class="metric-value">Live</div>
-            <div class="metric-label">Interactive Streamlit app</div>
-          </div>
-
-        </div>
-
+    
       </div>
     </section>
 
+    <!-- WHAT THE APP DOES -->
+      <section id="brief" class="project-brief-section">
+        <div class="container">
+      
+          <div class="project-brief">
+      
+            <div class="eyebrow">What the app does</div>
+      
+            <h2>From raw brokerage trades to decision-ready portfolio analytics</h2>
+      
+            <div class="brief-list">
+      
+              <div class="brief-item">
+                <span class="brief-number">01</span>
+      
+                <p>
+                  <strong>Reconstructs the investor's actual portfolio.</strong>
+                  The app processes Moomoo trade exports to rebuild open and closed
+                  positions, weighted-average cost, broker fees, realized P/L and
+                  unrealized P/L.
+                </p>
+              </div>
+      
+              <div class="brief-item">
+                <span class="brief-number">02</span>
+      
+                <p>
+                  <strong>Measures actual money-weighted performance.</strong>
+                  XIRR uses the timing and size of executed trades, estimated
+                  dividend cash flows and current portfolio value to estimate the
+                  investor's annualized return.
+                </p>
+              </div>
+      
+              <div class="brief-item">
+                <span class="brief-number">03</span>
+      
+                <p>
+                  <strong>Adds portfolio-risk analytics using market data.</strong>
+                  Current portfolio weights are applied to historical price data to
+                  estimate return, volatility, beta, Sharpe ratio and Jensen's alpha
+                  against a selected benchmark.
+                </p>
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      </section>
 
     <!-- MAIN CONTENT -->
     <section class="project-content">
       <div class="container content-grid">
 
         <!-- SIDEBAR -->
-        <aside class="project-sidebar">
-
-          <div class="sidebar-block">
-            <div class="sidebar-label">Project Type</div>
-            <p>Independent Personal Project</p>
+       <aside class="project-sidebar">
+      
+        <div class="sidebar-block">
+      
+          <div class="sidebar-label">Technology</div>
+      
+          <div class="sidebar-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">yfinance</span>
+            <span class="tag">Matplotlib</span>
           </div>
-
-          <div class="sidebar-block">
-            <div class="sidebar-label">Tools</div>
-
-            <div class="sidebar-tags">
-              <span>Python</span>
-              <span>Streamlit</span>
-              <span>pandas</span>
-              <span>NumPy</span>
-              <span>yfinance</span>
-              <span>Matplotlib</span>
-              <span>XlsxWriter</span>
-            </div>
+      
+        </div>
+      
+      
+        <div class="sidebar-block">
+      
+          <div class="sidebar-label">Analytics</div>
+      
+          <div class="sidebar-list">
+            <span>Weighted-average cost</span>
+            <span>Realized &amp; unrealized P/L</span>
+            <span>XIRR</span>
+            <span>Portfolio volatility</span>
+            <span>Beta &amp; Sharpe ratio</span>
+            <span>Jensen's alpha</span>
           </div>
-
-          <div class="sidebar-block">
-            <div class="sidebar-label">Core Analytics</div>
-
-            <ul class="sidebar-list">
-              <li>XIRR</li>
-              <li>Weighted-Average Cost</li>
-              <li>Realized & Unrealized P/L</li>
-              <li>Portfolio Volatility</li>
-              <li>Beta</li>
-              <li>Sharpe Ratio</li>
-              <li>Jensen's Alpha</li>
-            </ul>
-          </div>
-
-          <div class="sidebar-block moomoo-resource-links">
-
-            <a class="project-action primary"
-               href="https://moomoo-portfolio-analytics-ujnfyawizhbyvuzhdh5xlx.streamlit.app/"
-               target="_blank"
-               rel="noopener">
-              Live Dashboard ↗
+      
+        </div>
+      
+      
+        <div class="sidebar-block">
+      
+          <div class="sidebar-label">Resources</div>
+      
+          <div class="sidebar-links">
+      
+            <a
+              href="YOUR-CURRENT-LIVE-APP-LINK"
+              target="_blank"
+              rel="noopener"
+            >
+              Open live dashboard ↗
             </a>
-          
-            <a class="project-action"
-               href="https://github.com/wayeesiong/moomoo-portfolio-analytics"
-               target="_blank"
-               rel="noopener">
-              GitHub Repository ↗
+      
+            <a
+              href="YOUR-CURRENT-GITHUB-LINK"
+              target="_blank"
+              rel="noopener"
+            >
+              Source code on GitHub ↗
             </a>
-          
+      
           </div>
-
-        </aside>
+      
+        </div>
+      
+      </aside>
 
 
         <!-- CASE STUDY -->
