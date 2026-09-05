@@ -22,10 +22,28 @@
 
       <a class="brand" href="index.html#projects">← PORTFOLIO</a>
 
-      <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#capabilities">Capabilities</a>
-        <a href="index.html#about">About</a>
+      <nav class="navlinks" aria-label="Project navigation">
+
+        <a href="#brief">In Brief</a>
+        <a href="#method">Method</a>
+        <a href="#findings">Findings</a>
+      
+        <a
+          href="assets/portfolio-optimization-market-risk-analysis.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Report ↗
+        </a>
+      
+        <a
+          href="https://github.com/wayeesiong/portfolio-optimization-market-risk"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub ↗
+        </a>
+      
       </nav>
 
     </div>
@@ -86,7 +104,55 @@
       </div>
     </section>
 
-
+    <!-- IN BRIEF -->
+    <section id="brief" class="project-brief-section">
+      <div class="container">
+    
+        <div class="project-brief">
+    
+          <div class="eyebrow">In brief</div>
+    
+          <h2>What the analysis found</h2>
+    
+          <div class="brief-list">
+    
+            <div class="brief-item">
+              <span class="brief-number">01</span>
+    
+              <p>
+                <strong>Risk minimisation favoured BRK-B.</strong>
+                The minimum-variance portfolio allocated 75.92% to Berkshire
+                Hathaway and 24.08% to AT&amp;T.
+              </p>
+            </div>
+    
+            <div class="brief-item">
+              <span class="brief-number">02</span>
+    
+              <p>
+                <strong>The optimal risky portfolio shifted toward AT&amp;T.</strong>
+                The allocation changed to 24.48% BRK-B and 75.52% AT&amp;T,
+                providing the strongest risk-return trade-off under the model.
+              </p>
+            </div>
+    
+            <div class="brief-item">
+              <span class="brief-number">03</span>
+    
+              <p>
+                <strong>Diversification was limited.</strong>
+                BRK-B and AT&amp;T had a moderate positive correlation of about
+                0.461, while the broader beta analysis showed that most estimated
+                market sensitivities were not statistically significant.
+              </p>
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    </section>
         <!-- HERO METRICS -->
         <div class="project-metrics">
 
@@ -123,7 +189,6 @@
       </div>
     </section>
 
-
     <!-- PROJECT CONTENT -->
     <section class="section">
       <div class="container content-grid">
@@ -133,43 +198,41 @@
         <aside class="project-sidebar">
 
           <div class="sidebar-block">
-
-            <div class="sidebar-label">
-              Techniques
-            </div>
-
+        
+            <div class="sidebar-label">Methods</div>
+        
             <div class="sidebar-tags">
+              <span class="tag">Excel</span>
               <span class="tag">Markowitz</span>
               <span class="tag">Efficient Frontier</span>
-              <span class="tag">Sharpe Ratio</span>
+              <span class="tag">Capital Allocation Line</span>
+              <span class="tag">Single Index Model</span>
               <span class="tag">Beta</span>
-              <span class="tag">Regression</span>
             </div>
-
+        
           </div>
-
-
+        
+        
           <div class="sidebar-block">
-
-            <div class="sidebar-label">
-              Tools
-            </div>
-
+        
+            <div class="sidebar-label">Research focus</div>
+        
             <div class="sidebar-list">
-              <span>Microsoft Excel</span>
+              <span>Portfolio optimisation</span>
+              <span>Risk-return trade-off</span>
+              <span>BRK-B &amp; AT&amp;T</span>
+              <span>Systematic market risk</span>
             </div>
-
+        
           </div>
-
-
+        
+        
           <div class="sidebar-block">
-
-            <div class="sidebar-label">
-              Project files
-            </div>
-
+        
+            <div class="sidebar-label">Resources</div>
+        
             <div class="sidebar-links">
-
+        
               <a
                 href="assets/portfolio-optimization-market-risk-analysis.pdf"
                 target="_blank"
@@ -177,660 +240,314 @@
               >
                 Full academic report ↗
               </a>
-
+        
               <a
                 href="https://github.com/wayeesiong/portfolio-optimization-market-risk"
                 target="_blank"
                 rel="noopener"
               >
-                Technical repository ↗
+                Technical project on GitHub ↗
               </a>
-
+        
             </div>
-
+        
           </div>
-
+        
         </aside>
 
 
         <!-- MAIN CASE STUDY -->
-        <article class="case-study">
+        <article>
 
-
-          <!-- 01 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              01 · Investment question
+          <!-- 01 RESEARCH QUESTION -->
+          <section class="article-section">
+        
+            <div class="eyebrow">01 · Research question</div>
+        
+            <h2>How should investors balance portfolio risk, return and market exposure?</h2>
+        
+            <p>
+              This project applies portfolio theory to examine how different allocations
+              between Berkshire Hathaway and AT&amp;T affect portfolio risk and return,
+              before extending the analysis to systematic market risk across a broader
+              set of U.S. stocks.
+            </p>
+        
+            <div class="callout">
+              <strong>Core objective:</strong>
+              identify the minimum-variance and optimal risky portfolios using
+              mean-variance optimisation, then assess market sensitivity through
+              beta estimation.
             </div>
-
-            <h2>
-              How should risk and return influence portfolio allocation?
-            </h2>
-
-            <p>
-              The project examines how two U.S. equities with different
-              risk-return characteristics can be combined to construct
-              more efficient portfolios.
-            </p>
-
-            <p>
-              Berkshire Hathaway (BRK-B) and AT&T (T) were selected for the
-              portfolio analysis. Their historical returns, volatility,
-              covariance and correlation were used to evaluate different
-              portfolio weight combinations.
-            </p>
-
-            <p>
-              A second analysis extends the study to 30 U.S. equities by
-              estimating each stock's sensitivity to S&P 500 market returns.
-            </p>
-
-            <div class="question-box">
-              <strong>Core question:</strong>
-              How can portfolio weights be adjusted to minimise risk or
-              improve risk-adjusted return, and how sensitive are individual
-              stocks to broader market movements?
-            </div>
-
+        
           </section>
-
-
-          <!-- 02 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              02 · Data
-            </div>
-
-            <h2>
-              Daily equity and market data across a three-month sample.
-            </h2>
-
-            <p>
-              The study uses daily closing-price data from 2 January to
-              1 April 2025.
+        
+        
+          <!-- 02 METHODOLOGY -->
+          <section id="method" class="article-section">
+        
+            <div class="eyebrow">02 · Methodology</div>
+        
+            <h2>From two-asset optimisation to market-risk estimation</h2>
+        
+            <p class="subtle">
+              The analysis combines Markowitz portfolio construction with the
+              Single Index Model to evaluate both total portfolio risk and
+              systematic market risk.
             </p>
-
-            <p>
-              The 61 closing-price observations were converted into
-              60 daily holding-period returns for portfolio and regression
-              analysis.
-            </p>
-
-            <div class="data-table-wrapper">
-
-              <table class="data-table">
-
-                <thead>
-                  <tr>
-                    <th>Input</th>
-                    <th>Use in analysis</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-
-                  <tr>
-                    <td>BRK-B</td>
-                    <td>Portfolio asset 1</td>
-                  </tr>
-
-                  <tr>
-                    <td>AT&T</td>
-                    <td>Portfolio asset 2</td>
-                  </tr>
-
-                  <tr>
-                    <td>S&P 500</td>
-                    <td>Market benchmark for beta estimation</td>
-                  </tr>
-
-                  <tr>
-                    <td>30 U.S. stocks</td>
-                    <td>Single Index Model regressions</td>
-                  </tr>
-
-                  <tr>
-                    <td>0.2% risk-free rate</td>
-                    <td>Capital Allocation Line analysis</td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-          </section>
-
-
-          <!-- 03 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              03 · Methodology
-            </div>
-
-            <h2>
-              From individual stock returns to portfolio construction.
-            </h2>
-
+        
             <div class="workflow">
-
-              <div class="workflow-step">
-
-                <span class="workflow-num">
-                  01
-                </span>
-
-                <div>
-                  <h3>Calculate daily returns</h3>
-
-                  <p>
-                    Convert closing prices into holding-period returns
-                    and calculate average return and volatility.
-                  </p>
-                </div>
-
+        
+              <div class="step">
+                <div class="step-num">STEP 01</div>
+        
+                <h3>Measure risk &amp; return</h3>
+        
+                <p>
+                  Calculate average returns, standard deviations, coefficients of
+                  variation, covariance and correlation for BRK-B and AT&amp;T.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <span class="workflow-num">
-                  02
-                </span>
-
-                <div>
-                  <h3>Assess diversification</h3>
-
-                  <p>
-                    Calculate covariance and correlation between BRK-B
-                    and AT&T to evaluate their co-movement.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 02</div>
+        
+                <h3>Build the efficient frontier</h3>
+        
+                <p>
+                  Evaluate alternative BRK-B and AT&amp;T portfolio weights to map
+                  the trade-off between expected return and portfolio volatility.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <span class="workflow-num">
-                  03
-                </span>
-
-                <div>
-                  <h3>Generate portfolio combinations</h3>
-
-                  <p>
-                    Vary asset weights between 0% and 100% and calculate
-                    portfolio return and standard deviation for each
-                    allocation.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 03</div>
+        
+                <h3>Identify optimal portfolios</h3>
+        
+                <p>
+                  Determine the minimum-variance allocation and use the Capital
+                  Allocation Line to identify the optimal risky portfolio.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <span class="workflow-num">
-                  04
-                </span>
-
-                <div>
-                  <h3>Identify efficient portfolios</h3>
-
-                  <p>
-                    Select the allocation producing the minimum variance
-                    and the portfolio delivering the strongest estimated
-                    risk-return trade-off.
-                  </p>
-                </div>
-
+        
+        
+              <div class="step">
+                <div class="step-num">STEP 04</div>
+        
+                <h3>Estimate market risk</h3>
+        
+                <p>
+                  Regress individual stock returns against S&amp;P 500 returns to
+                  estimate beta across 30 stocks using the Single Index Model.
+                </p>
               </div>
-
-
-              <div class="workflow-step">
-
-                <span class="workflow-num">
-                  05
-                </span>
-
-                <div>
-                  <h3>Estimate market beta</h3>
-
-                  <p>
-                    Regress the returns of 30 stocks against S&P 500
-                    returns using Excel's regression tools.
-                  </p>
-                </div>
-
-              </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 04 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              04 · Risk-return profile
-            </div>
-
-            <h2>
-              AT&T produced higher return and higher volatility.
-            </h2>
-
-            <div class="data-table-wrapper">
-
-              <table class="data-table">
-
-                <thead>
-
-                  <tr>
-                    <th>Measure</th>
-                    <th>BRK-B</th>
-                    <th>AT&T</th>
-                  </tr>
-
-                </thead>
-
-                <tbody>
-
-                  <tr>
-                    <td>Average daily return</td>
-                    <td>0.285%</td>
-                    <td>0.382%</td>
-                  </tr>
-
-                  <tr>
-                    <td>Standard deviation</td>
-                    <td>0.01175</td>
-                    <td>0.01583</td>
-                  </tr>
-
-                  <tr>
-                    <td>Coefficient of variation</td>
-                    <td>4.1194</td>
-                    <td>4.1473</td>
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-            <p>
-              AT&T generated the higher average return during the sample,
-              but also exhibited greater volatility.
-            </p>
-
-            <p>
-              BRK-B's slightly lower coefficient of variation indicates
-              a marginally stronger return per unit of risk within the
-              observed sample.
-            </p>
-
+        
+        
+          <!-- 03 DATA -->
+          <section class="article-section">
+        
+            <div class="eyebrow">03 · Data</div>
+        
+            <h2>Two-asset optimisation supported by a broader market-risk sample</h2>
+        
+            <ul>
+        
+              <li>
+                <strong>Portfolio assets:</strong>
+                Berkshire Hathaway Class B (BRK-B) and AT&amp;T (T).
+              </li>
+        
+              <li>
+                <strong>Portfolio analysis:</strong>
+                return, volatility, covariance, correlation and efficient-frontier
+                combinations across alternative asset weights.
+              </li>
+        
+              <li>
+                <strong>Risk-free rate:</strong>
+                0.2% assumed during the sampling period for Capital Allocation Line analysis.
+              </li>
+        
+              <li>
+                <strong>Market-risk analysis:</strong>
+                beta estimation across 30 stocks using S&amp;P 500 returns as the market benchmark.
+              </li>
+        
+              <li>
+                <strong>Primary tool:</strong>
+                Microsoft Excel for portfolio calculations, optimisation and regression analysis.
+              </li>
+        
+            </ul>
+        
           </section>
-
-
-          <!-- 05 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              05 · Portfolio optimization
-            </div>
-
-            <h2>
-              Minimum risk and maximum risk-adjusted return require very different allocations.
-            </h2>
-
+        
+        
+          <!-- 04 FINDINGS -->
+          <section id="findings" class="article-section">
+        
+            <div class="eyebrow">04 · Key findings</div>
+        
+            <h2>Lower risk favoured BRK-B, while the optimal risky portfolio favoured AT&amp;T.</h2>
+        
             <div class="finding-grid">
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  75.92%
-                </div>
-
-                <h3>
-                  Minimum-Variance BRK-B Weight
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Minimum variance: 75.92% BRK-B</strong>
+        
                 <p>
-                  The lowest-risk portfolio allocates 75.92% to Berkshire
-                  Hathaway and 24.08% to AT&T.
+                  The lowest-risk portfolio allocated 75.92% to BRK-B and 24.08% to
+                  AT&amp;T, producing the minimum portfolio standard deviation.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  0.01120
-                </div>
-
-                <h3>
-                  Minimum Portfolio Risk
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Optimal risky: 75.52% AT&amp;T</strong>
+        
                 <p>
-                  The minimum-variance allocation produces an estimated
-                  standard deviation of 0.01120.
+                  The optimal risky portfolio allocated 24.48% to BRK-B and 75.52%
+                  to AT&amp;T, producing the steepest Capital Allocation Line.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  75.52%
-                </div>
-
-                <h3>
-                  Optimal Risky AT&T Weight
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Moderate diversification</strong>
+        
                 <p>
-                  The optimal risky portfolio shifts substantially toward
-                  AT&T, allocating 75.52% to AT&T and 24.48% to BRK-B.
+                  BRK-B and AT&amp;T had a correlation of approximately 0.461,
+                  indicating some diversification benefit but substantial remaining
+                  co-movement.
                 </p>
-
+        
               </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  0.11684
-                </div>
-
-                <h3>
-                  Capital Allocation Line Slope
-                </h3>
-
+        
+        
+              <div class="finding">
+        
+                <strong>Beta estimates were mostly weak</strong>
+        
                 <p>
-                  The optimal risky portfolio produces the steepest
-                  estimated Capital Allocation Line in the analysis.
+                  Across the 30-stock sample, 17 stocks had negative beta and
+                  13 had positive beta, but only three beta estimates were statistically
+                  significant at the 95% confidence level.
                 </p>
-
+        
               </div>
-
+        
             </div>
-
+        
           </section>
-
-
-          <!-- 06 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              06 · Diversification
-            </div>
-
-            <h2>
-              Positive correlation limits diversification benefits.
-            </h2>
-
+        
+        
+          <!-- 05 INTERPRETATION -->
+          <section class="article-section">
+        
+            <div class="eyebrow">05 · Interpretation</div>
+        
+            <h2>What the results suggest</h2>
+        
             <p>
-              BRK-B and AT&T produced an estimated correlation coefficient
-              of approximately 0.461.
+              BRK-B exhibited lower volatility and a slightly better risk-adjusted
+              profile, making it more attractive when the objective is to minimise
+              portfolio variance. AT&amp;T offered higher return potential but also
+              greater volatility, so the optimal risky portfolio shifted more weight
+              toward AT&amp;T when the objective changed from pure risk minimisation
+              to maximising the risk-return trade-off.
             </p>
-
+        
             <p>
-              The moderate positive relationship means the two assets do not
-              move perfectly together, but they also do not provide the same
-              diversification benefits that could be achieved using assets
-              with lower or negative correlation.
+              The moderate positive correlation between the two stocks limits
+              diversification efficiency. A portfolio containing lower-correlated or
+              negatively correlated assets could potentially achieve stronger
+              diversification benefits.
             </p>
-
-            <div class="question-box">
-              <strong>Portfolio implication:</strong>
-              Diversification is driven not only by the risk of individual
-              assets, but also by how their returns move relative to one another.
-            </div>
-
+        
           </section>
-
-
-          <!-- 07 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              07 · Market risk
-            </div>
-
-            <h2>
-              Beta estimation across 30 U.S. equities.
-            </h2>
-
-            <p>
-              The second part of the project used the Single Index Model
-              to estimate the sensitivity of individual stocks to the
-              S&P 500.
-            </p>
-
-            <div class="finding-grid">
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  17
-                </div>
-
-                <h3>
-                  Negative Estimated Betas
-                </h3>
-
-                <p>
-                  Seventeen of the thirty stocks produced negative beta
-                  estimates during the sample.
-                </p>
-
-              </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  13
-                </div>
-
-                <h3>
-                  Positive Estimated Betas
-                </h3>
-
-                <p>
-                  Thirteen stocks displayed positive estimated market
-                  sensitivity.
-                </p>
-
-              </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  1.143
-                </div>
-
-                <h3>
-                  Adobe Beta
-                </h3>
-
-                <p>
-                  Adobe was the only stock in the sample with an absolute
-                  beta estimate above one.
-                </p>
-
-              </div>
-
-
-              <div class="finding-card">
-
-                <div class="finding-stat">
-                  3 / 30
-                </div>
-
-                <h3>
-                  Statistically Significant Betas
-                </h3>
-
-                <p>
-                  Only Adobe, Disney and Domino's Pizza produced beta
-                  estimates that were statistically significant at the
-                  95% confidence level.
-                </p>
-
-              </div>
-
-            </div>
-
+        
+        
+          <!-- 06 LIMITATIONS -->
+          <section class="article-section">
+        
+            <div class="eyebrow">06 · Limitations</div>
+        
+            <h2>Interpreting the portfolio and beta estimates cautiously</h2>
+        
+            <ul>
+        
+              <li>
+                The two-asset portfolio provides a simplified illustration of
+                mean-variance optimisation and does not represent a fully diversified
+                investment universe.
+              </li>
+        
+              <li>
+                Portfolio weights are sensitive to the historical return and volatility
+                estimates used during the sampling period.
+              </li>
+        
+              <li>
+                The assumed 0.2% risk-free rate affects the Capital Allocation Line
+                and therefore the optimal risky portfolio.
+              </li>
+        
+              <li>
+                Most of the 30 estimated beta coefficients were statistically
+                insignificant, limiting confidence in individual market-risk estimates.
+              </li>
+        
+            </ul>
+        
           </section>
-
-
-          <!-- 08 -->
-          <section class="case-section">
-
-            <div class="section-number">
-              08 · Limitations
+        
+        
+          <!-- 07 RECRUITER TAKEAWAY -->
+          <section class="article-section">
+        
+            <div class="eyebrow">07 · Recruiter takeaway</div>
+        
+            <h2>What this project demonstrates</h2>
+        
+            <p>
+              This project demonstrates the ability to translate portfolio theory into
+              practical asset-allocation decisions, construct and interpret efficient
+              frontiers, evaluate risk-return trade-offs and extend portfolio analysis
+              to systematic market-risk estimation using regression techniques.
+            </p>
+        
+            <div class="hero-actions">
+        
+              <a
+                class="button primary"
+                href="assets/portfolio-optimization-market-risk-analysis.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Open full academic report
+              </a>
+        
+              <a class="button secondary" href="index.html">
+                ← Back to portfolio
+              </a>
+        
             </div>
-
-            <h2>
-              The analysis demonstrates portfolio mechanics rather than producing investment recommendations.
-            </h2>
-
-            <p>
-              The study covers only 60 daily return observations across
-              approximately three months. This is a short estimation window
-              for expected returns, volatility, correlation and beta.
-            </p>
-
-            <p>
-              The Markowitz analysis also considers only two risky assets,
-              meaning the efficient frontier is useful for illustrating the
-              portfolio optimisation process but is not representative of
-              a broadly diversified institutional portfolio.
-            </p>
-
-            <p>
-              Historical averages and covariance are used as model inputs.
-              These estimates may be unstable and may not represent future
-              market conditions.
-            </p>
-
-            <p>
-              A 0.2% risk-free rate was assumed for the Capital Allocation
-              Line analysis, while dividends were excluded from the daily
-              holding-period return calculations.
-            </p>
-
-            <p>
-              Finally, most of the estimated 30-stock betas were statistically
-              insignificant, so these estimates should not be interpreted
-              as robust long-term measures of systematic risk.
-            </p>
-
+        
           </section>
-
-
-          <!-- 09 -->
-          <section class="case-section recruiter-section">
-
-            <div class="section-number">
-              09 · Recruiter takeaway
-            </div>
-
-            <h2>
-              What this project demonstrates.
-            </h2>
-
-            <div class="takeaway-list">
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Portfolio construction
-                </strong>
-
-                <span>
-                  Translating expected return, volatility and covariance
-                  into portfolio-weight decisions.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Risk-return analysis
-                </strong>
-
-                <span>
-                  Comparing absolute risk with risk-adjusted return and
-                  investor objectives.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Excel modelling
-                </strong>
-
-                <span>
-                  Building portfolio calculations, efficient-frontier
-                  analysis and equity regressions in Excel.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Market-risk measurement
-                </strong>
-
-                <span>
-                  Applying regression-based beta estimation to evaluate
-                  systematic equity-market exposure.
-                </span>
-
-              </div>
-
-
-              <div class="takeaway-item">
-
-                <strong>
-                  Model interpretation
-                </strong>
-
-                <span>
-                  Recognising the limitations of short historical samples
-                  and avoiding overstatement of investment conclusions.
-                </span>
-
-              </div>
-
-            </div>
-
-          </section>
-
-
+        
         </article>
 
       </div>
