@@ -1565,3 +1565,38 @@ body {
   }
 
 }
+
+/* =========================================================
+   PROJECT ARTICLE — EDITORIAL STYLE
+   ========================================================= */
+
+.article-section {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0 44px;
+  margin-bottom: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-section:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.article-section h2 {
+  margin-bottom: 18px;
+}
+
+.article-section p {
+  line-height: 1.75;
+}
+
+.article-section ul {
+  margin-top: 16px;
+}
+
+.article-section li {
+  margin: 10px 0;
+  line-height: 1.65;
+}
