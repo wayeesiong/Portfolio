@@ -16,10 +16,30 @@
     <div class="container nav">
       <a class="brand" href="index.html#projects">← PORTFOLIO</a>
 
-      <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#capabilities">Capabilities</a>
-        <a href="index.html#about">About</a>
+      <nav class="navlinks" aria-label="Project navigation">
+
+        <a href="#brief">In Brief</a>
+      
+        <a href="#method">Method</a>
+      
+        <a href="#findings">Findings</a>
+      
+        <a
+          href="assets/gold-futures-macroeconomic-analysis.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Report ↗
+        </a>
+      
+        <a
+          href="https://github.com/wayeesiong/gold-futures-macroeconomic-analysis"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub ↗
+        </a>
+      
       </nav>
     </div>
   </header>
@@ -30,52 +50,102 @@
     <!-- PROJECT HERO -->
     <section class="project-hero">
       <div class="container">
-
-        <div class="project-kicker">
-          Financial Econometrics · Academic Group Project
+    
+        <div class="eyebrow">
+          Financial Engineering · U.S. Gold Futures
         </div>
-
-        <h1>Macroeconomic Determinants of U.S. Gold Futures Prices</h1>
-
-        <p class="project-lead">
-          An econometric investigation into how key U.S. macroeconomic variables
-          influence gold futures prices, with model diagnostics and robust
-          estimation used to refine the initial regression specification.
+    
+        <h1>
+          Macroeconomic Determinants of U.S. Gold Futures Prices
+        </h1>
+    
+        <p class="lead">
+          A ten-year econometric study examining how U.S. macroeconomic conditions
+          relate to gold futures prices, using OLS, diagnostic testing,
+          HAC/Newey-West estimation and an AR(1) specification.
         </p>
-
-        <div class="project-meta">
-          <span>U.S. Gold Futures</span>
-          <span>2014–2024</span>
-          <span>EViews</span>
-          <span>Financial Econometrics</span>
+    
+        <div class="meta-row">
+          <span class="meta-pill">Academic Group Project</span>
+          <span class="meta-pill">Financial Engineering</span>
+          <span class="meta-pill">OLS · HAC · AR(1)</span>
+          <span class="meta-pill">Mar 2014 – Mar 2024</span>
         </div>
-
-
-        <!-- HERO METRICS -->
-        <div class="project-metrics">
-
-          <div class="metric">
-            <div class="metric-value">121</div>
-            <div class="metric-label">Monthly observations</div>
+    
+    
+        <div class="metric-strip" aria-label="Project highlights">
+    
+          <div class="metric-item">
+            <strong>121</strong>
+            <span>Monthly observations</span>
           </div>
-
-          <div class="metric">
-            <div class="metric-value">5</div>
-            <div class="metric-label">Macroeconomic predictors</div>
+    
+          <div class="metric-item">
+            <strong>R² 0.967</strong>
+            <span>Final model explanatory power</span>
           </div>
-
-          <div class="metric">
-            <div class="metric-value">0.967</div>
-            <div class="metric-label">Final model R²</div>
+    
+          <div class="metric-item">
+            <strong>AR(1)</strong>
+            <span>Selected lag specification</span>
           </div>
-
-          <div class="metric">
-            <div class="metric-value">2.019</div>
-            <div class="metric-label">Durbin-Watson statistic</div>
+    
+          <div class="metric-item">
+            <strong>3</strong>
+            <span>Significant macro drivers at 1%</span>
           </div>
-
+    
         </div>
+    
+      </div>
+    </section>
 
+    <!-- IN BRIEF -->
+    <section id="brief" class="project-brief-section">
+      <div class="container">
+    
+        <div class="project-brief">
+    
+          <div class="eyebrow">In brief</div>
+    
+          <h2>What the analysis found</h2>
+    
+          <div class="brief-list">
+    
+            <div class="brief-item">
+              <span class="brief-number">01</span>
+    
+              <p>
+                <strong>Monetary conditions were important drivers of gold futures.</strong>
+                Money supply and interest rates were positively associated with gold
+                futures prices, while industrial production showed a negative relationship.
+              </p>
+            </div>
+    
+            <div class="brief-item">
+              <span class="brief-number">02</span>
+    
+              <p>
+                <strong>Past gold prices carried substantial explanatory power.</strong>
+                The previous month's gold futures price remained highly significant,
+                indicating strong persistence in monthly price dynamics.
+              </p>
+            </div>
+    
+            <div class="brief-item">
+              <span class="brief-number">03</span>
+    
+              <p>
+                <strong>The robust specification materially improved the model.</strong>
+                Adding the AR(1) term and HAC/Newey-West estimation resolved the
+                autocorrelation issue and increased model explanatory power to R² = 0.967.
+              </p>
+            </div>
+    
+          </div>
+    
+        </div>
+    
       </div>
     </section>
 
