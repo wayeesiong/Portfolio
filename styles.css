@@ -1341,9 +1341,6 @@ body {
   border-right: 1px solid var(--line);
 }
 
-.metric-item:first-child {
-  padding-left: 0;
-}
 
 .metric-item:last-child {
   border-right: 0;
