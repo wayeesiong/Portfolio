@@ -1258,3 +1258,65 @@ body {
 .section-soft {
   background: #fafbfc;
 }
+
+/* =========================================================
+   PROJECT — IN BRIEF
+   ========================================================= */
+
+.project-brief-section {
+  padding: 18px 0 42px;
+}
+
+.project-brief {
+  max-width: 900px;
+  padding-top: 30px;
+  border-top: 2px solid var(--navy);
+}
+
+.project-brief h2 {
+  margin-bottom: 22px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.brief-list {
+  border-top: 1px solid var(--line);
+}
+
+.brief-item {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 18px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.brief-number {
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brief-item p {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.brief-item strong {
+  color: var(--navy);
+}
+
+
+@media (max-width: 560px) {
+
+  .brief-item {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+}
