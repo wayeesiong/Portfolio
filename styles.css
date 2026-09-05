@@ -1552,3 +1552,16 @@ body {
     padding-left: 0;
   }
 }
+
+@media (max-width: 920px) and (min-width: 561px) {
+
+  .metric-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-strip .metric-item,
+  .metric-strip .metric-item:first-child {
+    padding: 24px 30px !important;
+  }
+
+}
