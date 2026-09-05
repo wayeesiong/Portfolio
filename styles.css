@@ -973,7 +973,11 @@ body {
 /* ---------- HERO ---------- */
 
 .hero {
-  padding: 64px 0 56px;
+  padding: 52px 0 30px;
+}
+
+#projects {
+  padding-top: 34px;
 }
 
 .hero-simple {
@@ -1021,7 +1025,7 @@ body {
 }
 
 .hero-actions {
-  margin-top: 24px;
+  margin-top: 20px;
   align-items: center;
 }
 
