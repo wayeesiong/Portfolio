@@ -1707,3 +1707,55 @@ html {
   }
 
 }
+
+/* =========================================================
+   PROJECT SIDEBAR — TAG & BUTTON FIX
+   ========================================================= */
+
+.sidebar-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.sidebar-card .tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 999px;
+
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+.sidebar-card .button {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+
+  .sidebar-card {
+    padding: 24px;
+  }
+
+  .sidebar-card .tags {
+    gap: 7px;
+  }
+
+  .sidebar-card .tag {
+    font-size: 0.75rem;
+    padding: 6px 9px;
+  }
+
+}
