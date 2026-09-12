@@ -123,7 +123,13 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 .finding { border-left: 4px solid var(--accent); background: #fbf8f2; padding: 18px; border-radius: 0 12px 12px 0; }
 .finding strong { color: var(--navy); }
 .finding p { color: var(--muted); font-size: .9rem; margin: 7px 0 0; }
-.callout { background: linear-gradient(135deg, #eaf3fb, #f8fbfe); border: 1px solid #ccdfef; border-radius: 16px; padding: 22px; }
+.callout {
+  background: linear-gradient(135deg, #eaf3fb, #f8fbfe);
+  border: 1px solid #ccdfef;
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: 22px;
+}
 .callout strong { color: var(--navy); }
 
 @media (max-width: 920px) {
