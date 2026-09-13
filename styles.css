@@ -108,7 +108,16 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 .sidebar-card { position: sticky; top: 96px; background: var(--navy); color: white; border-radius: var(--radius); padding: 28px; }
 .sidebar-card p { color: rgba(255,255,255,.72); }
 .sidebar-card .tag { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.17); color: white; }
-.sidebar-card .button { margin-top: 18px; width: 100%; border-color: white; background: white; color: var(--navy); }
+.sidebar-card .button {
+  display: flex;
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.35;
+  padding-left: 14px;
+  padding-right: 14px;
+}
 .article-section { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; margin-bottom: 18px; }
 .article-section p:last-child { margin-bottom: 0; }
 .article-section ul { margin: 14px 0 0 20px; padding: 0; }
