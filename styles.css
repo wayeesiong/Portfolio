@@ -108,16 +108,6 @@ h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
 .sidebar-card { position: sticky; top: 96px; background: var(--navy); color: white; border-radius: var(--radius); padding: 28px; }
 .sidebar-card p { color: rgba(255,255,255,.72); }
 .sidebar-card .tag { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.17); color: white; }
-.sidebar-card .button {
-  display: flex;
-  width: 100%;
-  white-space: normal;
-  text-align: center;
-  justify-content: center;
-  line-height: 1.35;
-  padding-left: 14px;
-  padding-right: 14px;
-}
 .article-section { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; margin-bottom: 18px; }
 .article-section p:last-child { margin-bottom: 0; }
 .article-section ul { margin: 14px 0 0 20px; padding: 0; }
@@ -1747,14 +1737,19 @@ html {
 }
 
 .sidebar-card .button {
-  display: flex;
+  display: block;
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   white-space: normal;
+  overflow-wrap: anywhere;
   text-align: center;
-  justify-content: center;
   line-height: 1.35;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding: 12px 10px;
+}
+
+.sidebar-card .button + .button {
+  margin-top: 14px;
 }
 
 @media (max-width: 560px) {
@@ -1832,12 +1827,20 @@ html {
     grid-column: auto;
   }
 
-  .dblock-photo img {
+  .dblock-photo:not(.dblock-photo-wide) img {
     width: 100%;
     height: auto;
     max-height: none;
   }
 
-}
+  .dblock-photo-wide img {
+    width: auto;
+    max-width: 100%;
+    max-height: 70vh;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
+
