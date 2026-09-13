@@ -1789,9 +1789,13 @@ html {
 }
 
 .dblock-photo-wide img {
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
   height: auto;
-  max-height: 620px;
   object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dblock-photo figcaption {
@@ -1814,10 +1818,12 @@ html {
     grid-column: auto;
   }
 
-  .dblock-photo img,
-  .dblock-photo-wide img {
+  .dblock-photo img {
+    width: 100%;
     height: auto;
     max-height: none;
   }
+
+}
 
 }
