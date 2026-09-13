@@ -1856,3 +1856,39 @@ html {
 
 }
 
+/* =========================================================
+   FINAL SIDEBAR BUTTON FIX
+   ========================================================= */
+
+.sidebar-card a.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  margin-top: 18px;
+  padding: 14px 12px;
+
+  background: #ffffff !important;
+  color: var(--navy) !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 16px;
+
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.sidebar-card a.button:hover {
+  background: #f4f7fb !important;
+  color: var(--navy) !important;
+  transform: translateY(-1px);
+}
