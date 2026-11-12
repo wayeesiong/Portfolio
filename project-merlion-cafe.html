@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Merlion Café case study: a Python-supported management accounting analysis of outlet profitability, product mix, capacity utilisation and contribution-led operating decisions." />
+  <meta name="theme-color" content="#0a2745" />
+  <title>Merlion Café | Business Performance & Decision Analytics | Wa Yee Siong</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Minimal fallback so this file is readable before it is placed in the Portfolio repo.
+       The live site's existing, unlayered styles.css takes precedence over this layer. */
+    @layer merlion-fallback {
+      :root { --bg:#f4f7fb; --surface:#fff; --surface-2:#eef3f8; --ink:#102033;
+        --muted:#607086; --line:#d9e2ec; --navy:#0a2745; --blue:#245b91;
+        --accent:#b7893f; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+        background:linear-gradient(180deg,#f8fafc,var(--bg)); color:var(--ink); line-height:1.65; }
+      a { color:inherit; }
+      .container { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+      .topbar { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line);
+        background:rgba(248,250,252,.94); backdrop-filter:blur(12px); }
+      .nav { min-height:70px; display:flex; gap:24px; align-items:center; justify-content:space-between; }
+      .brand { color:var(--navy); font-weight:800; text-decoration:none; }
+      .navlinks { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+      .navlinks a { font-size:.9rem; font-weight:650; color:var(--muted); text-decoration:none; }
+      .project-hero { padding:72px 0 45px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:.77rem;
+        font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+      .dot { width:8px; height:8px; border-radius:50%; background:var(--accent); }
+      h1,h2,h3 { line-height:1.17; margin-top:0; }
+      h1 { font-size:clamp(2.5rem,6vw,4.6rem); letter-spacing:-.05em; max-width:1040px; margin-bottom:22px; }
+      h2 { font-size:clamp(1.8rem,4vw,2.7rem); letter-spacing:-.035em; }
+      h3 { font-size:1.12rem; }
+      .lead { max-width:810px; font-size:clamp(1.04rem,2vw,1.25rem); color:var(--muted); }
+      .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:27px; }
+      .meta-pill { padding:8px 11px; background:#fff; border:1px solid var(--line); border-radius:10px;
+        font-size:.82rem; font-weight:700; color:#496176; }
+      .metric-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+        margin-top:35px; border-block:1px solid var(--line); }
+      .metric-item { padding:21px 23px; border-right:1px solid var(--line); }
+      .metric-item:last-child { border-right:0; }
+      .metric-item strong { display:block; color:var(--navy); font-size:1.45rem; line-height:1.1; }
+      .metric-item span { display:block; color:var(--muted); font-size:.81rem; margin-top:6px; }
+      .project-brief-section { padding:18px 0 42px; }
+      .project-brief { max-width:900px; padding-top:30px; border-top:2px solid var(--navy); }
+      .project-brief h2 { margin-bottom:22px; }
+      .brief-list { border-top:1px solid var(--line); }
+      .brief-item { display:grid; grid-template-columns:50px minmax(0,1fr); gap:18px;
+        padding:18px 0; border-bottom:1px solid var(--line); }
+      .brief-number { color:var(--blue); font-size:.76rem; font-weight:800; }
+      .brief-item p { margin:0; color:var(--muted); }
+      .brief-item strong { color:var(--navy); }
+      .section { padding:68px 0; }
+      .content-grid { display:grid; grid-template-columns:230px minmax(0,1fr); gap:60px; align-items:start; }
+      .project-sidebar { position:sticky; top:100px; }
+      .sidebar-block { padding-bottom:24px; margin-bottom:24px; border-bottom:1px solid var(--line); }
+      .sidebar-label { color:#557087; font-weight:800; font-size:.72rem; letter-spacing:.12em;
+        text-transform:uppercase; margin-bottom:12px; }
+      .sidebar-tags { display:flex; flex-wrap:wrap; gap:7px; }
+      .tag { background:var(--surface-2); border:1px solid var(--line); color:#38506a;
+        font-size:.8rem; font-weight:700; padding:7px 10px; border-radius:99px; }
+      .sidebar-list,.sidebar-links { display:flex; flex-direction:column; gap:8px; }
+      .sidebar-list { color:#334a60; }
+      .sidebar-links a { color:#0a5b9d; font-weight:650; text-decoration:none; }
+      .article-section { padding:0 0 44px; margin-bottom:44px; border-bottom:1px solid var(--line); }
+      .article-section:last-child { border-bottom:none; }
+      .article-section p { line-height:1.75; }
+      .article-section li { margin:10px 0; }
+      .subtle { color:var(--muted); }
+      .workflow { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:22px; }
+      .step { background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:18px; }
+      .step-num { color:var(--blue); font-size:.73rem; font-weight:900; letter-spacing:.1em; }
+      .step h3 { margin:10px 0 8px; }
+      .step p { margin:0; font-size:.88rem; color:var(--muted); }
+      .finding-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:20px; }
+      .finding { border-left:4px solid var(--accent); background:#fbf8f2; padding:18px; border-radius:0 12px 12px 0; }
+      .finding strong { color:var(--navy); }
+      .finding p { color:var(--muted); font-size:.9rem; margin:7px 0 0; }
+      .callout { background:linear-gradient(135deg,#eaf3fb,#f8fbfe); border:1px solid #ccdfef;
+        border-radius:16px; padding:22px; margin-top:22px; }
+      .hero-actions { margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; }
+      .button { display:inline-flex; justify-content:center; align-items:center; padding:12px 17px;
+        border-radius:12px; text-decoration:none; font-weight:750; font-size:.93rem; border:1px solid var(--navy); }
+      .button.primary { color:#fff; background:var(--navy); }
+      .button.secondary { color:var(--navy); background:#fff; border-color:var(--line); }
+      .footer { padding:42px 0 58px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+      .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+      @media(max-width:920px) { .metric-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }
+        .content-grid { grid-template-columns:1fr; gap:20px; } .project-sidebar { position:static; }
+        .metric-item:nth-child(2){ border-right:0; } }
+      @media(max-width:620px) { .container { width:min(100% - 26px,1120px); }
+        .navlinks { gap:12px; } .navlinks a:nth-child(2) { display:none; }
+        .metric-strip,.workflow,.finding-grid { grid-template-columns:1fr; }
+        .metric-item { border-right:0; border-bottom:1px solid var(--line); }
+        .metric-item:last-child { border-bottom:0; } .brief-item { grid-template-columns:36px 1fr; gap:10px; } }
+    }
+
+    /* Page-specific components: intentionally scoped; no changes to global styles.css. */
+    .merlion-project .content-grid > article { min-width:0; }
+    .merlion-project .workflow { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .merlion-project .step { min-height:0; }
+    .merlion-project .step h3 { font-size:1rem; }
+    .merlion-project .step p { font-size:.88rem; }
+    .merlion-project .data-table-wrapper { margin:24px 0 14px; overflow:auto;
+      border:1px solid var(--line,#d9e2ec); border-radius:15px; }
+    .merlion-project .data-table { width:100%; border-collapse:collapse; background:white; min-width:650px; }
+    .merlion-project .data-table th,.merlion-project .data-table td {
+      padding:13px 15px; text-align:left; border-bottom:1px solid var(--line,#d9e2ec); white-space:nowrap; font-size:.88rem; }
+    .merlion-project .data-table th { background:#eff4f8; color:#0a2745; font-size:.79rem; }
+    .merlion-project .data-table tbody tr:last-child td { border-bottom:0; }
+    .merlion-project .data-table td:first-child { font-weight:750; color:#0a2745; }
+    .merlion-project .number { font-variant-numeric:tabular-nums; }
+    .merlion-project .delta-negative { color:#a34237; font-weight:760; }
+    .merlion-project .delta-positive { color:#216b5c; font-weight:760; }
+    .merlion-project .chart-panel { border:1px solid var(--line,#d9e2ec); border-radius:16px;
+      background:white; padding:24px; margin-top:24px; }
+    .merlion-project .chart-title { display:block; margin-bottom:3px; color:#0a2745; font-size:1.06rem; font-weight:800; }
+    .merlion-project .chart-subtitle { display:block; color:var(--muted,#607086); font-size:.84rem; margin-bottom:20px; }
+    .merlion-project .chart-legend { display:flex; flex-wrap:wrap; gap:15px; margin-bottom:18px; font-size:.77rem;
+      color:var(--muted,#607086); font-weight:650; }
+    .merlion-project .legend-item { display:inline-flex; align-items:center; gap:7px; }
+    .merlion-project .legend-dot { display:inline-block; width:11px; height:11px; border-radius:3px; }
+    .merlion-project .legend-2025 { background:#245b91; }
+    .merlion-project .legend-2026 { background:#b7893f; }
+    .merlion-project .bar-group + .bar-group { margin-top:21px; }
+    .merlion-project .bar-label { display:flex; justify-content:space-between; align-items:center; gap:8px;
+      font-size:.85rem; font-weight:800; margin-bottom:9px; color:#183653; }
+    .merlion-project .bar-line { display:grid; grid-template-columns:44px minmax(0,1fr) 60px;
+      align-items:center; gap:9px; margin:5px 0; }
+    .merlion-project .bar-year { color:#6b7c8d; font-size:.74rem; }
+    .merlion-project .bar-track { height:12px; background:#edf2f6; border-radius:99px; overflow:hidden; }
+    .merlion-project .bar-fill { display:block; height:100%; border-radius:99px; }
+    .merlion-project .bar-fill.year-2025 { background:#245b91; }
+    .merlion-project .bar-fill.year-2026 { background:#b7893f; }
+    .merlion-project .bar-value { text-align:right; font-size:.76rem; font-weight:760; color:#29465c; font-variant-numeric:tabular-nums; }
+    .merlion-project .chart-caption { font-size:.77rem; color:var(--muted,#607086); line-height:1.55;
+      margin:19px 0 0; }
+    .merlion-project .scenario-list { display:grid; gap:13px; margin:23px 0; }
+    .merlion-project .scenario-item { display:grid; grid-template-columns:160px minmax(0,1fr);
+      gap:20px; padding:17px 0; border-top:1px solid var(--line,#d9e2ec); }
+    .merlion-project .scenario-item:last-child { border-bottom:1px solid var(--line,#d9e2ec); }
+    .merlion-project .scenario-item .scenario-label { font-weight:800; color:#0a2745; }
+    .merlion-project .scenario-item p { margin:0; }
+    .merlion-project .source-note { font-size:.79rem; color:var(--muted,#607086); }
+    .merlion-project .inline-link { color:#165b91; font-weight:700; }
+    .merlion-project :is(#brief,#method,#findings,#recommendations) { scroll-margin-top:96px; }
+    @media(max-width:920px) { .merlion-project .content-grid { grid-template-columns:1fr; } }
+    @media(max-width:620px) {
+      .merlion-project .brand { white-space:nowrap; flex-shrink:0; font-size:.78rem; }
+      .merlion-project .navlinks { flex-wrap:nowrap; gap:15px; }
+      .merlion-project .navlinks a { font-size:.78rem; white-space:nowrap; }
+      .merlion-project .navlinks a:nth-child(2),
+      .merlion-project .navlinks a:nth-child(3),
+      .merlion-project .navlinks a:nth-child(4) { display:none; }
+      .merlion-project .workflow { grid-template-columns:1fr; }
+      .merlion-project .chart-panel { padding:17px; }
+      .merlion-project .scenario-item { grid-template-columns:1fr; gap:6px; }
+      .merlion-project .bar-line { grid-template-columns:33px minmax(0,1fr) 52px; gap:7px; } }
+  </style>
+</head>
+<body class="merlion-project">
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">← PORTFOLIO</a>
+      <nav class="navlinks" aria-label="Project navigation">
+        <a href="#brief">In Brief</a>
+        <a href="#method">Method</a>
+        <a href="#findings">Findings</a>
+        <a href="#recommendations">Decisions</a>
+        <a href="assets/merlion-cafe-management-accounting-report.pdf" target="_blank" rel="noopener">Report ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> Management Accounting · Business Analytics</div>
+        <h1>Merlion Café: From Revenue Growth to Profitable Growth</h1>
+        <p class="lead">A data-driven management accounting case study diagnosing why higher sales failed to translate into profit across three Singapore café outlets—and turning transaction analysis into differentiated commercial and operational decisions.</p>
+        <div class="meta-row" aria-label="Project details">
+          <span class="meta-pill">Academic Group Project</span>
+          <span class="meta-pill">NTU MSc Accountancy · AC6103</span>
+          <span class="meta-pill">Python · Excel · Management Accounting</span>
+          <span class="meta-pill">2025–2026 Case Data</span>
+        </div>
+        <div class="metric-strip" aria-label="Key project results">
+          <div class="metric-item"><strong>+5.66%</strong><span>Chain-wide sales growth, 2026 versus 2025</span></div>
+          <div class="metric-item"><strong>−17.92%</strong><span>Chain-wide profit change despite sales growth</span></div>
+          <div class="metric-item"><strong>−$241.7k</strong><span>Orchard adverse product-mix effect in profit bridge</span></div>
+          <div class="metric-item"><strong>40.85%</strong><span>CBD modelled order-fulfilment capacity utilisation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brief" class="project-brief-section">
+      <div class="container">
+        <div class="project-brief">
+          <div class="eyebrow">In brief</div>
+          <h2>What the analysis found</h2>
+          <div class="brief-list">
+            <div class="brief-item"><span class="brief-number">01</span><p><strong>Growth masked a profitability problem.</strong> Total sales rose to approximately $3.95 million, while profit fell to $544,056. Direct costs grew 21.19%—far faster than revenue.</p></div>
+            <div class="brief-item"><span class="brief-number">02</span><p><strong>Each location had a different economic problem.</strong> Orchard's sales mix weakened contribution; CBD's capacity and marketing spend were poorly aligned with demand; Toa Payoh grew profit and served as a comparative benchmark.</p></div>
+            <div class="brief-item"><span class="brief-number">03</span><p><strong>Decisions should be contribution-led, not sales-led.</strong> Pricing, menu mix, staffing, marketing and opening hours require outlet-specific, relevant-cost evaluations and pilot testing before implementation.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <aside class="project-sidebar" aria-label="Project information">
+          <div class="sidebar-block">
+            <div class="sidebar-label">Analytical methods</div>
+            <div class="sidebar-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Profit Bridges</span>
+              <span class="tag">Contribution Margin</span>
+              <span class="tag">Product Mix</span>
+              <span class="tag">Cost-to-Serve</span>
+              <span class="tag">Relevant Costs</span>
+              <span class="tag">Sensitivity Analysis</span>
+              <span class="tag">Balanced Scorecard</span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-label">Case scope</div>
+            <div class="sidebar-list">
+              <span>CBD · Orchard · Toa Payoh</span>
+              <span>2025–2026 transactional data</span>
+              <span>Outlet, product and service-channel analysis</span>
+              <span>Management decision support</span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-label">Resources</div>
+            <div class="sidebar-links">
+              <a href="assets/merlion-cafe-management-accounting-report.pdf" target="_blank" rel="noopener">Full team report &amp; technical appendices ↗</a>
+              <a href="index.html">Other portfolio projects ↗</a>
+            </div>
+          </div>
+        </aside>
+
+        <article>
+          <section class="article-section">
+            <div class="eyebrow">01 · Business problem</div>
+            <h2>Why were growing sales producing lower profits?</h2>
+            <p>Merlion Café's three outlets—CBD, Orchard and Toa Payoh—served different demand patterns under largely uniform pricing, menu, staffing and opening-hour practices. The team examined 2025–2026 financial and transactional case data to isolate the drivers of changing profitability and assess practical management responses.</p>
+            <div class="callout"><strong>Decision question:</strong> Which outlet-specific changes to product mix, pricing, marketing and capacity could improve incremental contribution without assuming that higher revenue automatically creates value?</div>
+          </section>
+
+          <section id="method" class="article-section">
+            <div class="eyebrow">02 · Analytical framework</div>
+            <h2>From raw transaction data to decisions</h2>
+            <p class="subtle">The group combined Python-based transaction reconstruction with management accounting, operating analysis and scenario evaluation.</p>
+            <div class="workflow">
+              <div class="step"><div class="step-num">STEP 01</div><h3>Reconcile the dataset</h3><p>Rebuild product-level revenue and direct costs from transaction quantities, prices and cost schedules; reconcile totals to case statements within rounding differences.</p></div>
+              <div class="step"><div class="step-num">STEP 02</div><h3>Decompose profit changes</h3><p>Construct outlet profit bridges separating volume, product mix, selling-price, direct-cost-rate and operating-expense effects.</p></div>
+              <div class="step"><div class="step-num">STEP 03</div><h3>Analyse service economics</h3><p>Compare contribution per order, service channel, modelled fulfilment minute, staff capacity, weekday and hourly demand.</p></div>
+              <div class="step"><div class="step-num">STEP 04</div><h3>Evaluate decisions</h3><p>Stress-test selective price changes, marketing break-even orders and opening hours using incremental contribution and avoidable costs.</p></div>
+              <div class="step"><div class="step-num">STEP 05</div><h3>Translate into management KPIs</h3><p>Propose a strategy map and Balanced Scorecard centred on contribution quality, cost control, demand fit and operational efficiency.</p></div>
+            </div>
+            <p class="source-note">Method assumptions included an order key of outlet + date + order ID, and modelled fulfilment time of 3 minutes plus 2 minutes per dine-in item (40% of that time for takeaway/delivery). These are case-model assumptions rather than observed time-and-motion measurements.</p>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">03 · Outlet performance</div>
+            <h2>One chain. Three very different stories.</h2>
+            <p>Every outlet increased sales, but only Toa Payoh converted that growth into higher profit. Operating margin and resource utilisation therefore provide a more useful comparison than revenue growth alone.</p>
+            <div class="data-table-wrapper">
+              <table class="data-table" aria-label="2026 outlet performance comparison">
+                <thead><tr><th scope="col">Outlet</th><th scope="col">2026 sales</th><th scope="col">Sales growth</th><th scope="col">2026 profit margin</th><th scope="col">Profit growth</th><th scope="col">Modelled utilisation</th></tr></thead>
+                <tbody>
+                  <tr><td>CBD</td><td class="number">$946,504</td><td class="number">+1.84%</td><td class="number">6.03%</td><td class="delta-negative">−37.11%</td><td class="number">40.85%</td></tr>
+                  <tr><td>Orchard</td><td class="number">$1,508,913</td><td class="number">+5.36%</td><td class="number">14.83%</td><td class="delta-negative">−32.67%</td><td class="number">61.57%</td></tr>
+                  <tr><td>Toa Payoh</td><td class="number">$1,494,418</td><td class="number">+8.55%</td><td class="number">17.61%</td><td class="delta-positive">+9.79%</td><td class="number">58.48%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="chart-panel" role="img" aria-label="Profit margin 2025 versus 2026. CBD 9.76 percent to 6.03 percent. Orchard 23.21 to 14.83 percent. Toa Payoh 17.41 to 17.61 percent.">
+              <span class="chart-title">Profit margin erosion was not uniform</span>
+              <span class="chart-subtitle">Outlet profit margins · 2025 versus 2026 · bar scale 0–25%</span>
+              <div class="chart-legend" aria-hidden="true"><span class="legend-item"><i class="legend-dot legend-2025"></i>2025</span><span class="legend-item"><i class="legend-dot legend-2026"></i>2026</span></div>
+              <div class="bar-group"><div class="bar-label"><span>CBD</span><span class="delta-negative">−3.73 pp</span></div>
+                <div class="bar-line"><span class="bar-year">2025</span><span class="bar-track"><span class="bar-fill year-2025" style="width:39.04%"></span></span><span class="bar-value">9.76%</span></div>
+                <div class="bar-line"><span class="bar-year">2026</span><span class="bar-track"><span class="bar-fill year-2026" style="width:24.12%"></span></span><span class="bar-value">6.03%</span></div>
+              </div>
+              <div class="bar-group"><div class="bar-label"><span>Orchard</span><span class="delta-negative">−8.38 pp</span></div>
+                <div class="bar-line"><span class="bar-year">2025</span><span class="bar-track"><span class="bar-fill year-2025" style="width:92.84%"></span></span><span class="bar-value">23.21%</span></div>
+                <div class="bar-line"><span class="bar-year">2026</span><span class="bar-track"><span class="bar-fill year-2026" style="width:59.32%"></span></span><span class="bar-value">14.83%</span></div>
+              </div>
+              <div class="bar-group"><div class="bar-label"><span>Toa Payoh</span><span class="delta-positive">+0.20 pp</span></div>
+                <div class="bar-line"><span class="bar-year">2025</span><span class="bar-track"><span class="bar-fill year-2025" style="width:69.64%"></span></span><span class="bar-value">17.41%</span></div>
+                <div class="bar-line"><span class="bar-year">2026</span><span class="bar-track"><span class="bar-fill year-2026" style="width:70.44%"></span></span><span class="bar-value">17.61%</span></div>
+              </div>
+              <p class="chart-caption">Source: team report, Appendix 2.1. Bars are normalised to a 25% margin scale; percentages are the reported figures.</p>
+            </div>
+          </section>
+
+          <section id="findings" class="article-section">
+            <div class="eyebrow">04 · Key findings</div>
+            <h2>Diagnose the economics, not just the symptoms</h2>
+            <div class="finding-grid">
+              <div class="finding"><strong>Orchard · Product mix</strong><p>Profit fell 32.67% despite higher sales. A −$241,740 pure product-mix effect dominated its profit bridge, reflecting a shift away from several high-contribution products.</p></div>
+              <div class="finding"><strong>CBD · Capacity and marketing</strong><p>Modelled fulfilment utilisation was just 40.85%. Marketing spend rose by $16,800 while annual orders declined by 425; weekends contributed only 4.18% of revenue.</p></div>
+              <div class="finding"><strong>Toa Payoh · Internal benchmark</strong><p>Sales grew 8.55% and profit increased 9.79%. Its $17.02 contribution per order was higher than Orchard's $14.70 despite fewer orders.</p></div>
+              <div class="finding"><strong>Chain-wide · Direct-cost pressure</strong><p>Direct costs rose 21.19%, against 5.66% sales growth. Gross margin declined from 58.69% to 53.03%, supporting tighter cost governance.</p></div>
+            </div>
+            <p>Service-channel modelling also showed higher direct contribution <em>per modelled fulfilment minute</em> for takeaway and delivery than dine-in. This is an operational workload signal—not proof of higher net channel profitability, since delivery commissions were unavailable.</p>
+          </section>
+
+          <section id="recommendations" class="article-section">
+            <div class="eyebrow">05 · Management decisions</div>
+            <h2>Move from diagnosis to quantified actions</h2>
+            <div class="scenario-list">
+              <div class="scenario-item"><div class="scenario-label">Orchard<br><span class="subtle">Menu &amp; pricing</span></div><p>Rebuild higher-contribution product share through placement and bundling, then test selective price changes. A <strong>$0.50 increase</strong> under an <strong>assumed 5% volume decline</strong> produced an estimated <strong>+$54,956</strong> in annual direct contribution in the case sensitivity model—not a realised outcome.</p></div>
+              <div class="scenario-item"><div class="scenario-label">CBD<br><span class="subtle">Marketing &amp; capacity</span></div><p>Align shifts with weekday office peaks and require contribution-based campaign approval. The extra <strong>$16,800</strong> in annual marketing spend required around <strong>1,667 incremental orders</strong> to break even at the reported contribution per order.</p></div>
+              <div class="scenario-item"><div class="scenario-label">Opening hours<br><span class="subtle">Relevant costs</span></div><p>Do not assume closure saves labour. Under the case's stated assumptions, a full CBD weekend closure generated an estimated <strong>−$10,951</strong> net effect <em>before labour savings</em>; a shorter Orchard hours pilot showed a positive but assumption-dependent result.</p></div>
+              <div class="scenario-item"><div class="scenario-label">Chain-wide<br><span class="subtle">Performance control</span></div><p>Monitor contribution per order and hour, direct-cost percentage, modelled utilisation and product mix in a Balanced Scorecard. At approximately $3.95 million in sales, a one-percentage-point lower direct-cost ratio would imply about <strong>+$39,500</strong> gross profit, all else equal.</p></div>
+            </div>
+            <div class="callout"><strong>Recommended operating principle:</strong> centralise direct-cost governance, but adapt pricing, menu mix, marketing, staffing and opening hours to each outlet's local demand and contribution economics.</div>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">06 · Assumptions &amp; limitations</div>
+            <h2>Where the evidence stops</h2>
+            <ul>
+              <li><strong>Simulated case setting:</strong> financial figures and proposed actions come from the academic Merlion Café case. Recommendations were not implemented, and modelled benefits are not actual savings.</li>
+              <li><strong>Capacity measure:</strong> 40.85% at CBD measures modelled order-fulfilment workload relative to assumed capacity, not all employee activity or labour productivity.</li>
+              <li><strong>Customer and channel data:</strong> the dataset lacked customer identifiers and delivery-platform commission costs, limiting conclusions about repeat customers or complete channel profitability.</li>
+              <li><strong>Scenario uncertainty:</strong> price responses, avoidable labour costs, customer migration between hours and several cost behaviours were not observed. Pilot testing was therefore recommended before operational rollout.</li>
+            </ul>
+          </section>
+
+          <section class="article-section">
+            <div class="eyebrow">07 · Recruiter takeaway</div>
+            <h2>What this project demonstrates</h2>
+            <p>This group project demonstrates how quantitative work can support practical financial decisions: reconciling raw data, decomposing earnings drivers, distinguishing volume growth from contribution quality, assessing operational constraints, evaluating relevant-cost scenarios and presenting defensible recommendations to management.</p>
+            <p class="source-note">The full group report includes reconciliation schedules, profit bridges, product-mix analysis, capacity and service-channel metrics, demand heatmaps, pricing sensitivity tables, and the strategy map/Balanced Scorecard.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="assets/merlion-cafe-management-accounting-report.pdf" target="_blank" rel="noopener">Open full case report ↗</a>
+              <a class="button secondary" href="index.html">← Back to portfolio</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>Wa Yee Siong · Finance &amp; Quantitative Portfolio</span>
+      <a href="index.html">Back to portfolio ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
